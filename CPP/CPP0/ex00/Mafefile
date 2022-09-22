@@ -10,11 +10,14 @@ OBJS =	${SRCS:.cpp=.o}
 
 RM = rm -rf
 
+all:	${NAME}
+
+.c.o:
+	${CC} ${CPPFLAGS} -c $< -o
 
 ${NAME}:	${OBJS}
 			${CC} ${CPPFLAGS} -o ${NAME} ${OBJS}
 
-all:	${NAME}
 
 clean:	${RM} ${OBJS}
 
