@@ -1,9 +1,10 @@
 NAME =	phonebook
 
 SRCS = 	PhoneBook.cpp\
-		Contact.cpp
+		Contact.cpp\
+		main.cpp
 
-CC = clang++
+CC = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 

@@ -1,26 +1,25 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include <iostream>
-
-class phoneBook 
+class PhoneBook 
 {
 
 	public:
 
-		char	a1;
-		int		a2;
-		float	a3; /* attributs */
+		PhoneBook(char p1, int p2, float p3); //constructeur
+		~PhoneBook(void); //destructeur
 
-		phoneBook(char p1, int p2, float p3); //constructeur
-		~phoneBook(void); //destructeur
+		/* METHODES */
+		void	ft_add(void);
+		void	ft_search(void);
+		void	ft_exit(void);
 
 	private:
-		int	_private_nb;
-
-		void	_private_func(void) const;
-
+		/* ATTRIBUTS Encapsulation : tous les attributs d'une classe doivent toujours être privés.*/
+		Contact _contact_tab[8];
 };
 
 
 #endif
+
+/* Les classes sont des plans (ex: plans d'architectes), les objets sont le resultats (ex: les maisons)
