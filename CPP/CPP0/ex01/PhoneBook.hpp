@@ -14,7 +14,6 @@ class PhoneBook
 		/* METHODES */
 		void	ft_add(void);
 		void	ft_search(void);
-		void	ft_exit(void);
 
 	private: /* ATTRIBUTS Encapsulation : tous les attributs d'une classe doivent toujours être privés.*/
 		Contact	_contacts_tab[8];
