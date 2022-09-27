@@ -15,6 +15,7 @@ int	main(int ac, char **av)
 	while (1)
 	{
 		std::cout << "> ";
+		std::cin.clear();
 		std::getline(std::cin, input);
 		if (input.compare("ADD") == 0)
 			phonebook.ft_add();

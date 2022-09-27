@@ -62,9 +62,26 @@ void	PhoneBook::ft_add()
 	_idx++;
 }
 
+void	ft_under_ten(int size)
+{
+	int	i;
+	int	x;
+
+	x = 10 - size;
+	i = 0;
+	while (i < x)
+	{
+		std::cout << " ";
+		i++;
+	}
+
+	
+}
+
 void	PhoneBook::ft_search()
 {
 	int	index;
+	int	i;
 	std::string input;
 
 	if (_nb_contact == 0)
@@ -72,11 +89,70 @@ void	PhoneBook::ft_search()
 		std::cout << "No contact found" << std::endl;
 		return ;
 	}
+	i = 0;
+	while (i < _nb_contact)
+	{
+		int size_name;
+		int	size_last;
+		int	size_nickname;
+		std::string str;
+
+		size_name = _contacts_tab[i].get_first_name().size();
+		size_last = _contacts_tab[i].get_last_name().size();
+		size_nickname = _contacts_tab[i].get_nickname().size();
+
+		std::cout << "|    Index" << "|First Name" << "| Last name" << "|  Nickname|"<< std::endl;
+		std::cout << "|        " << i << "|";
+		if (size_name < 10)
+		{
+			ft_under_ten(size_name);
+			std::cout << _contacts_tab[i].get_first_name() << "|";
+		}
+		else if (size_name > 10)
+		{
+			str = _contacts_tab[i].get_first_name().erase(9);
+			str.push_back('.');
+			std:: cout << str << "|";
+		}
+
+		if (size_last < 10)
+		{
+			ft_under_ten(size_last);
+			std::cout << _contacts_tab[i].get_last_name() << "|";
+		}
+		else if (size_last > 10)
+		{
+			str.erase();
+			std::string str;
+			str = _contacts_tab[i].get_last_name().erase(9);
+			str.push_back('.');
+			std:: cout << str << "|";
+		}
+
+		if (size_nickname < 10)
+		{
+			ft_under_ten(size_nickname);
+			std::cout << _contacts_tab[i].get_nickname() << "|";
+		}
+		else if (size_nickname > 10)
+		{
+			str.erase();
+			std::string str;
+			str = _contacts_tab[i].get_nickname().erase(9);
+			str.push_back('.');
+			std:: cout << str << "|";
+		}
+		std::cout << std::endl;
+	
+		i++;
+	}
+
+
 	std::cout << "Which index are you looking for ? ";
 	std::cin >> index;
-	std::cin >> input;
-	std::cout << "index = " << index << std::endl;
-	std::cout << "input = " << input << std::endl;
+	// std::cin >> input;
+	// std::cout << "index = " << index << std::endl;
+	// std::cout << "input = " << input << std::endl;
 
 	if (!std::cin || (index < 0 || index > (_nb_contact - 1)) )
 	{
