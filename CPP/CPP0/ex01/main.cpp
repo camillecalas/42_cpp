@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 			phonebook.ft_add();
 		else if(input.compare("SEARCH") == 0)
 			phonebook.ft_search();
-		else if (input.compare("EXIT") == 0)
+		else if (std::cin.eof() || input.compare("EXIT") == 0)
 		{
 			std::cout << "EXIT SUCCESS" << std::endl;
 			return (0);

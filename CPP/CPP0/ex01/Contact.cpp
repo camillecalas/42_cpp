@@ -1,16 +1,14 @@
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
-/*********** CONSTRUCTOR | DESTRUCTOR ***********/
+/*************** CONSTRUCTOR | DESTRUCTOR ***************/
 Contact::Contact(void)
 {
-	std::cout << "Constructor Contact" << std::endl;
 	return ;
 }
 
 Contact::~Contact(void)
 {
-	std::cout << "Destructor Contact" << std::endl;
 	return ;
 }
 

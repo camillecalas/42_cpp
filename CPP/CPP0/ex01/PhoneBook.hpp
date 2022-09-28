@@ -8,8 +8,8 @@
 class PhoneBook 
 {
 	public:
-		PhoneBook(void); //constructeur
-		~PhoneBook(void); //destructeur
+		PhoneBook(void);
+		~PhoneBook(void);
 
 		/* METHODES */
 		void	ft_add(void);
@@ -17,8 +17,10 @@ class PhoneBook
 
 	private: /* ATTRIBUTS Encapsulation : tous les attributs d'une classe doivent toujours être privés.*/
 		Contact	_contacts_tab[8];
-		int			_nb_contact;
-		int			_idx;
+		int		_nb_contact;
+		int		_idx;
+		void	_print_preview(int index, std::string, std::string, std::string);
+		void	_print_elem(std::string);
 };
 
 #endif
