@@ -67,7 +67,8 @@
 		"concepts": "cpp",
 		"iomanip": "cpp",
 		"deque": "cpp",
-		"ranges": "cpp"
+		"ranges": "cpp",
+		"fstream": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "Disabled",
 	"C_Cpp.dimInactiveRegions": false

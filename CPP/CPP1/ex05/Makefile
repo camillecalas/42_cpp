@@ -1,6 +1,7 @@
-NAME =	Files
+NAME =	Brain
 
 SRCS =	main.cpp\
+		Harl.cpp\
 
 CC = c++
 

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-Zombie* newZombie( std::string name )
+Zombie * newZombie( std::string name )
 {
 	Zombie *new_zombie;
 	
