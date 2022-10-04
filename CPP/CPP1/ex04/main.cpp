@@ -39,8 +39,6 @@ int	main(int ac, char **av)
 		while (1)
 		{
 			find_it = line_wip.find(s1);
-			std::cout << line_wip << std::endl;
-			std::cout << find_it << std::endl;
 			if (find_it == std::string::npos)
 			{
 				fs_copy << line_wip;

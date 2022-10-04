@@ -3,7 +3,7 @@
  Zombie*    zombieHorde( int N, std::string name )
  {
 	int	i;
-	Zombie *new_zombie = new Zombie[N];
+	Zombie	*new_zombie = new Zombie[N];
 
 	 i = 0;
 	 while (i < N)

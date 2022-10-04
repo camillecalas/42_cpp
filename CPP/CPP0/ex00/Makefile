@@ -18,8 +18,12 @@ all:	${NAME}
 ${NAME}:	${OBJS}
 			${CC} ${CPPFLAGS} -o ${NAME} ${OBJS}
 
+clean:
+	${RM} ${OBJS}
 
-clean:	${RM} ${OBJS}
+fclean:			clean
+	${RM} ${NAME}
 
-re:	fclean all
-.PHONY: all clean fclean re
+re:				fclean all
+
+.PHONY:			all clean fclean re

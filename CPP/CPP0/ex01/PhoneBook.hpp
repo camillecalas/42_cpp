@@ -15,14 +15,12 @@ class PhoneBook
 		void	ft_add(void);
 		void	ft_search(void);
 
-	private: /* ATTRIBUTS Encapsulation : tous les attributs d'une classe doivent toujours être privés.*/
+	private: 
 		Contact	_contacts_tab[8];
 		int		_nb_contact;
 		int		_idx;
-		void	_print_preview(int index, std::string, std::string, std::string);
-		void	_print_elem(std::string);
+		void	_print_preview(int index, std::string, std::string, std::string) const;
+		void	_print_elem(std::string) const;
 };
 
 #endif
-
-/* Les classes sont des plans (ex: plans d'architectes), les objets sont le resultats (ex: les maisons) */

@@ -1,21 +1,27 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-int	main(int ac, char **av)
+int	main(void)
 {
-	(void)ac;
-	(void)av;
-
-	Zombie	*camille;
-	Zombie	*diego;
-	camille = newZombie("Camille");
-	diego = newZombie("Diego");
+	Zombie	*camille = newZombie("Camille");
+	Zombie	*diego = newZombie("Diego");
+	Zombie	*Jean = new Zombie("Jean");
 
 	camille->announce();
-	delete (camille);
+	delete (camille); //On libère la case mémoire
+	camille = 0;  //On indique que le pointeur ne pointe plus vers rien
+	
 	diego->announce();
-	randomChump("Bar");
 	delete(diego);
+	diego = 0;
+
+	Jean->announce();
+	delete(Jean);
+	Jean = 0;
+
+	randomChump("Bar");
 
 	return (0);	
 }
+
+/* Avec randomChump, le Zombie est detruit en dehors de la fonction, on ne peut pas faire annoncer le Zombie dans le main par exemple */

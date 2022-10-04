@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 
 void	ft_print_uppercase(char *str)
 {
