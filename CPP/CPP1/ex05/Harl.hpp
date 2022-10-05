@@ -1,3 +1,6 @@
+#ifndef HARL_HPP
+# define HARL_HPP
+
 #include <iostream>
 class Harl
 {
@@ -12,3 +15,5 @@ class Harl
 		void	_warning(void);
 		void	_error(void);
 };
+
+#endif
