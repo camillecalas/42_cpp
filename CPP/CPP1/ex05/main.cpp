@@ -1,7 +1,14 @@
 #include "Harl.hpp"
 
-int	main(int ac, char **av)
+int	main(void)
 {
-	
+	Harl	harl;
+
+	harl.complain("debug");
+	harl.complain("info");
+	harl.complain("error");
+	harl.complain("warning");
+	harl.complain("fewf");
+
 	return (0);
 }
