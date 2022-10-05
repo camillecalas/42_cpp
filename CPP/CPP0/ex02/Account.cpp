@@ -6,8 +6,6 @@
 /*************** CONSTRUCTOR | DESTRUCTOR ***************/
 Account::Account(int initial_deposit): _amount(initial_deposit)
 {
-
-	//  _amount = initial_deposit;
 	_nbAccounts++;
 	_accountIndex = _nbAccounts - 1;
 	_nbWithdrawals = 0;
@@ -111,10 +109,8 @@ bool Account::makeWithdrawal(int withdrawal)
 		_amount -=withdrawal;
 		std::cout << ";amount:" << _amount;
 		std::cout << ";nb_withdrawal:" << _nbWithdrawals << std::endl;
-		return (false);
 	}
-
-	return (0);
+	return (true);
 }
 
 int	Account::checkAmount(void)const
