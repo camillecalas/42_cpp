@@ -64,7 +64,7 @@ void	Account::_displayTimestamp()
 	gmtm = gmtime(&now);
 
 	std::cout << "[";
-	std::cout << (gmtm->tm_year + 1900) << (gmtm->tm_mon + 1) << gmtm->tm_mday;
+	std::cout << (gmtm->tm_year + 1900) << std::setw(2) << (gmtm->tm_mon + 1) << std::setw(2) << gmtm->tm_mday;
 	std::cout << "_";
 	std::cout << std::setfill('0') << std::setw(2) << (gmtm->tm_hour + 2);
 	std::cout << std::setfill('0') << std::setw(2) << gmtm->tm_min;

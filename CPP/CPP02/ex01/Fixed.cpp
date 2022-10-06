@@ -32,8 +32,10 @@ Fixed::~Fixed()
 }
 
 /************************* OPERATORS *************************/
-Fixed &Fixed::operator=(const Fixed &rhs)
+Fixed &Fixed::operator=(Fixed const &rhs)
 {
+	if (this == &rhs)
+		return (*this)
 	std::cout << "Copy assignment operator called" << std::endl;
 	_value = rhs.getRawBits();
 	return (*this);
@@ -55,7 +57,7 @@ void	Fixed::setRawBits( int const raw )
 }
 
 /************************ FONCTIONS	 ************************/
-std::ostream &operator<<(std::ostream os &, const Fixed & obj);
+std::ostream &operator<<(std::ostream & os, Fixed const & obj);
 {
 	return (os);
 }

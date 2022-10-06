@@ -3,6 +3,7 @@
 # include <iostream>
 #include <string>
 #include <iomanip>
+#include <algorithm>
 
 /*********** CONSTRUCTOR | DESTRUCTOR ***********/
 PhoneBook::PhoneBook()
@@ -17,6 +18,21 @@ PhoneBook::~PhoneBook(void)
 	return ;
 }
 
+
+/************************ FUNCTIONS ************************/
+void findAndReplaceAll(std::string & input, std::string toSearch, std::string replaceStr)
+{
+    // Get the first occurrence
+    size_t pos = input.find(toSearch);
+    // Repeat till end is reached
+    while( pos != std::string::npos)
+    {
+        // Replace this occurrence of Sub String
+        input.replace(pos, toSearch.size(), replaceStr);
+        // Get the next occurrence from the current position
+        pos = input.find(toSearch, pos + replaceStr.size());
+    }
+}
 /************************ METHODES ************************/
 void	PhoneBook::ft_add()
 {
@@ -24,37 +40,44 @@ void	PhoneBook::ft_add()
 	if (_idx == 8)
 		_idx = 0;
 
-	std::cout << _idx << " First name : " ;
-	std::getline(std::cin, input);
+	do
+	{
+		std::cout << _idx << " First name : " ;
+		std::getline(std::cin, input);
+		findAndReplaceAll(input, "\t", " ");
+	} while (input.empty);
 	_contacts_tab[_idx].set_first_name(input);
 	do
 	{
 		std::cout << _idx << " Last name : " ;
 		std::getline(std::cin, input);
+		findAndReplaceAll(input, "\t", " ");
 		_contacts_tab[_idx].set_last_name(input);
 	} while (input.empty());
 	do
 	{
 		std::cout << _idx << " Nickname : " ;
 		std::getline(std::cin, input);
+		findAndReplaceAll(input, "\t", " ");
 		_contacts_tab[_idx].set_nickname(input);
 	} while (input.empty());
 	do
 	{
 		std::cout << _idx << " Darkest secret : " ;
 		std::getline(std::cin, input);
+		findAndReplaceAll(input, "\t", " ");
 		_contacts_tab[_idx].set_darkest_secret(input);
 	} while (input.empty());
 	do
 	{
 		std::cout << _idx << " Phone number : " ;
 		std::getline(std::cin, input);
+		findAndReplaceAll(input, "\t", " ");
 		_contacts_tab[_idx].set_phone_number(input);
 	} while (input.empty());
 	_nb_contact++;
 	_idx++;
 }
-
 
 void	PhoneBook::_print_elem(std::string str) const
 {
@@ -116,3 +139,5 @@ void	PhoneBook::ft_search()
 		std::cout << index << " Phone number : " << _contacts_tab[index].get_phone_number() << std::endl;
 	}
 }
+
+
