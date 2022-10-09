@@ -9,6 +9,7 @@ int	main(void)
 	for (int i = 0; i < N; i++)
 		zombie[i].announce();
 	delete [] (zombie);
+	zombie = 0;
 	for (int i = 0; i < N; i++)
 		zombie = 0;
 

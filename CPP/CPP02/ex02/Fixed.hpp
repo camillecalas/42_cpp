@@ -26,6 +26,12 @@ class Fixed
 		Fixed	operator*(Fixed const &);
 		Fixed	operator/(Fixed const &);
 
+		Fixed	& operator++(void);
+		Fixed	& operator--(void);
+		Fixed	operator++(int i);
+		Fixed	operator--(int i);
+
+
 
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );

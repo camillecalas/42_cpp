@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 		std::cerr << strerror(errno) << std::endl;
 		return (1);
 	}
-	fs_copy.open(filename_replace.c_str());
+	fs_copy.open(filename_replace.c_str()); //c_str permet de changer std::string into char *
 	if (fs_copy.fail())
 	{
 		std::cerr << strerror(errno) << std::endl;

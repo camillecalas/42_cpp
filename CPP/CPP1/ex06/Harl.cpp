@@ -36,7 +36,7 @@ void	Harl::_error(void)
 
 void	Harl::complain(std::string input)
 {
-	void	(Harl::*fptr[4])(void)  =  {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
+	pfn_complain fptr[4] =  {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
 	std::string complain[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int	i;
 
@@ -51,14 +51,25 @@ void	Harl::complain(std::string input)
 	switch (i)
 	{
 		case 0:
-			(this->*fptr[0])();
+		{
+			(this->*(fptr[0]))();
+			__attribute__ ((fallthrough));
+		}
 		case 1:
-			(this->*fptr[1])();
+		{
+			(this->*(fptr[1]))();
+			__attribute__ ((fallthrough));
+		}
 		case 2:
-			(this->*fptr[2])();
+		{
+			(this->*(fptr[2]))();
+			__attribute__ ((fallthrough));
+		}
 		case 3:
-			(this->*fptr[3])();
+		{
+			(this->*(fptr[3]))();
 			break ;
+		}
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl << std::endl;
 			break ;

@@ -5,7 +5,6 @@ int	main(void)
 {
 	Zombie	*camille = newZombie("Camille");
 	Zombie	*diego = newZombie("Diego");
-	Zombie	*Jean = new Zombie("Jean");
 
 	camille->announce();
 	delete (camille); //On libère la case mémoire
@@ -14,10 +13,6 @@ int	main(void)
 	diego->announce();
 	delete(diego);
 	diego = 0;
-
-	Jean->announce();
-	delete(Jean);
-	Jean = 0;
 
 	randomChump("Bar");
 
