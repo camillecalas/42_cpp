@@ -58,9 +58,10 @@ void	Harl::complain(std::string input)
 			(this->*fptr[2])();
 		case 3:
 			(this->*fptr[3])();
-		// default:
-		// 	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl << std::endl;
-		// 	break ;
+			break ;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl << std::endl;
+			break ;
 	}
 	return ;
 }

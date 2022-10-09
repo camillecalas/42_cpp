@@ -17,6 +17,7 @@ class Fixed
 
 	private:
 		int	_value;
+		// 1 seule pr toutes les instances classes, partagee
 		static const int	_nb_bits;
 };
 

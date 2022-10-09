@@ -39,6 +39,49 @@ Fixed &Fixed::operator=(Fixed const &rhs)
 	_value = rhs._value;
 	return (*this);
 }
+//Comparaison
+bool	Fixed::operator>(Fixed const &rhs)
+{
+	return (_value > rhs._value);
+}
+bool	Fixed::operator>=(Fixed const &rhs)
+{
+	return (_value >= rhs._value);
+}
+bool	Fixed::operator<(Fixed const &rhs)
+{
+	return (_value < rhs._value);
+}
+bool	Fixed::operator<=(Fixed const &rhs)
+{
+	return (_value > rhs._value);
+}
+bool	Fixed::operator==(Fixed const &rhs)
+{
+	return (_value > rhs._value);
+}
+bool	Fixed::operator!=(Fixed const &rhs)
+{
+	return (_value > rhs._value);
+}
+
+//Arithmetiques
+Fixed	Fixed::operator+(Fixed const &rhs)
+{
+	return (_value + rhs._value);
+}
+Fixed	Fixed::operator-(Fixed const &rhs)
+{
+	return (_value - rhs._value);
+}
+Fixed	Fixed::operator*(Fixed const &rhs)
+{
+	return (_value * rhs._value);
+}
+Fixed	Fixed::operator/(Fixed const &rhs)
+{
+	return (_value / rhs._value);
+}
 
 std::ostream &operator<<(std::ostream & os, Fixed const & obj)
 {

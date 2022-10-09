@@ -16,4 +16,7 @@ class Harl
 		void	_error(void);
 };
 
+//pointeurs sur fonctions membres
+typedef	void (Harl::*pfn_complain)(void);
+
 #endif
