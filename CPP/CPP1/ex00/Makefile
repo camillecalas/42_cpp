@@ -5,21 +5,20 @@ SRCS =	main.cpp \
 	newZombie.cpp\
 	randomChump.cpp\
 
+OBJS_PATH = objects/
+OBJS = ${addprefix ${OBJS_PATH}, ${SRCS:.cpp=.o}}
+
 CC = c++
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+${OBJS_PATH}%.o: ${SRCS_PATH}%.cpp
+	@mkdir -p $(dir $@)
+	${CC} ${CFLAGS} -c $< -o $@ ${INCLUDES}
 
-OBJS =	${SRCS:.cpp=.o}
+all:        $(NAME)
 
-RM = rm -rf
-
-all:	${NAME}
-
-.c.o:
-	${CC} ${CPPFLAGS} -c $< -o
-
-${NAME}:	${OBJS}
-			${CC} ${CPPFLAGS} -o ${NAME} ${OBJS}
+$(NAME):    $(OBJS)
+	${CC} ${CFLAGS} $(OBJS) -o $(NAME)
 
 clean:
 	${RM} ${OBJS}

@@ -1,0 +1,29 @@
+no =	Files
+
+SRCS =	main.cpp\
+
+CC = c++
+
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+
+OBJS =	${SRCS:.cpp=.o}
+
+RM = rm -rf
+
+all:	${no}
+
+.c.o:
+	${CC} ${CPPFLAGS} -c $< -o
+
+${no}:	${OBJS}
+			${CC} ${CPPFLAGS} -o ${no} ${OBJS}
+
+clean:
+	${RM} ${OBJS}
+
+fclean:			clean
+	${RM} ${no}
+
+re:				fclean all
+
+.PHONY:			all clean fclean re
