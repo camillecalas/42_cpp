@@ -3,16 +3,33 @@
 
 int	main( void )
 {
+
+
 	Fixed	a;
 	Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
-	Fixed	c(a);
-	// Fixed	c = 18;
+	// Fixed	c(a);
+	Fixed	c = 2;
 	Fixed	d = 189;
 	Fixed	e = 189;
-
 	Fixed	x = 1;
 
-	//test arithmetique :
+
+	//rawBits
+	// Fixed	i(0);
+	// std::cout << i << std::endl;
+	// std::cout << "++i " << ++i << std::endl;
+	// std::cout<< "*************"<<std::endl;
+	// Fixed	j(1);
+	// std::cout << j << std::endl;
+	// std::cout << "++j " << ++j << std::endl;
+	// std::cout << "++j " << ++j << std::endl;
+	// std::cout<< "*************"<<std::endl;
+	// Fixed	k(1.4f);
+	// std::cout << k << std::endl;
+	// std::cout << "++k " << ++k << std::endl;
+	
+
+	// test arithmetique :
 	std::cout << "c + d = " << c + d << std::endl;
 	std::cout << "c - d = " << c - d << std::endl;
 	std::cout << "c * d = " << c * d << std::endl;
@@ -61,7 +78,7 @@ int	main( void )
 	std::cout << "x = " << x << std::endl;
 	std::cout << "++x = " << ++x << std::endl;
 	std::cout << "++x = " << ++x << std::endl << std::endl;
-
+	x = 1;
 	std::cout << "x = " << x << std::endl;
 	std::cout << "x++ = " << x++ << std::endl;
 	std::cout << "x++ = " << x++ << std::endl;
@@ -78,8 +95,6 @@ int	main( void )
 	std::cout << Fixed::max( a, b ) << std::endl;
 	return 0;
 }
-
-
 
 	// Fixed a;
 	// Fixed const b(10);
@@ -157,5 +172,3 @@ int	main( void )
 
 	// std::cout << std::endl << "MAX FUNCTION" << std::endl;
 	// std::cout << "min(c, b) = " << Fixed::max(c, b) << std::endl;
-
-	// return 0;

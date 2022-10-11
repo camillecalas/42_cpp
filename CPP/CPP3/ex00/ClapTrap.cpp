@@ -57,23 +57,23 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (_hit_points <= 0 || _energy_points <= 0)
 	{
 		std::cout	<< "ClapTrap " 
-					<< getName() << " is out of energy " 
-					<< std::endl;
+					<< getName() << " is out of energy " << std::endl;
 		return ;
 	}
-	_attack_damage -= amount;
-	if (amount > (unsigned int)_hit_points)
+	_hit_points -= amount;
+	if (_hit_points < 0)
 	{
 		std::cout	<< "ClapTrap " 
-					<< _name << " lost 1 life " 
-					<< std::endl;
+					<< _name << " is dead " << std::endl;
+					return ;
 	}
-
-	std::cout	<< "ClapTrap " 
-				<< _name << " takes damage, loosing "
-				<< amount << ", " 
-				<< _attack_damage << " points of damage!" 
-				<< std::endl;
+	else if (_hit_points > 0)
+	{
+		std::cout	<< "ClapTrap " 
+				<< _name << " lost " 
+				<< amount << " point of life" << std::endl;
+				return ;
+	}
 }
 
 
