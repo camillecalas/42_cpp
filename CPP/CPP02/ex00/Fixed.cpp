@@ -25,7 +25,6 @@ Fixed &Fixed::operator=(Fixed const &rhs)
 		return (*this);
 	std::cout << "Copy assignment operator called" << std::endl;
 	_value = rhs.getRawBits();
-	// _value = rhs._value;
 	//return l'objet copie
 	return (*this);
 }

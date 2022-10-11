@@ -5,7 +5,8 @@ int	main( void )
 {
 	Fixed	a;
 	Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
-	Fixed	c = 18;
+	Fixed	c(a);
+	// Fixed	c = 18;
 	Fixed	d = 189;
 	Fixed	e = 189;
 
