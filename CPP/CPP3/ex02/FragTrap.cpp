@@ -6,6 +6,7 @@ FragTrap::FragTrap() : ClapTrap()
 	_hit_points = 100;
 	_energy_points = 100;
 	_attack_damage = 30;
+	_value = _hit_points;
 	std::cout << "FragTrap | Constructor called" << std::endl;
 	return ;
 }
@@ -15,6 +16,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	_hit_points = 100;
 	_energy_points = 100;
 	_attack_damage = 30;
+	_value = _hit_points;
 	return ;
 }
 FragTrap::FragTrap(FragTrap const & copy)
@@ -27,7 +29,6 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap | Destructor called" << std::endl;
 	return ;	
 }
-
 /************************* OPERATORS OVERLOAD *************************/
 FragTrap & FragTrap::operator=(FragTrap const &rhs)
 {
@@ -42,39 +43,9 @@ FragTrap & FragTrap::operator=(FragTrap const &rhs)
 /***************************** METHODES *****************************/
 void	FragTrap::attack(const std::string& target)
 {
-	if (target.empty())
-	{
-		std::cout << "Target is missing" << std::endl;
-		return ;
-	}
-	if (_hit_points <= 0)
-		std::cout << "FragTrap " << getName() << " cannot attack. He is already dead " << std::endl;
-	else if (_energy_points <= 0)
-		std::cout << "FragTrap " << getName() << " cannot attack. He is out of energy " << std::endl;
-	else
-	{
-		std::cout << "FragTrap " << getName() << " attacks "<< target << ", causing " << getAttack() << " points of damage!" << std::endl;
-		_energy_points -= 1;
-	}
-	return ;
+	ClapTrap::attack(target, "FragTrap");
 }
-
-void	FragTrap::takeDamage(unsigned int amount)
-{
-	std::cout << "[ FragTrap (takeDamage): ]" << std::endl;
-	ClapTrap::takeDamage(amount);
-	std::cout << std::endl;
-}
-
-void	FragTrap::beRepaired(unsigned int amount)
-{
-	std::cout << "[ FragTrap (beRepaired): ]" << std::endl;
-	ClapTrap::beRepaired(amount);
-}
-
-
 void FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap | High fives " << std::endl;
 }
-

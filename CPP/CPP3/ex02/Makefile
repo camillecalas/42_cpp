@@ -1,4 +1,4 @@
-NAME =	ClapTrap
+NAME =	FragTrap
 
 SRCS =	main.cpp\
 		ClapTrap.cpp\
@@ -7,19 +7,20 @@ SRCS =	main.cpp\
 
 CC = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+OBJS_PATH = objects/
+OBJS = ${addprefix ${OBJS_PATH}, ${SRCS:.cpp=.o}}
 
-OBJS =	${SRCS:.cpp=.o}
+CC = c++
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-RM = rm -rf
+${OBJS_PATH}%.o: ${SRCS_PATH}%.cpp
+	@mkdir -p $(dir $@)
+	${CC} ${CFLAGS} -c $< -o $@ ${INCLUDES}
 
-all:	${NAME}
+all:        $(NAME)
 
-.c.o:
-	${CC} ${CPPFLAGS} -c $< -o
-
-${NAME}:	${OBJS}
-			${CC} ${CPPFLAGS} -o ${NAME} ${OBJS}
+$(NAME):    $(OBJS)
+	${CC} ${CFLAGS} $(OBJS) -o $(NAME)
 
 clean:
 	${RM} ${OBJS}

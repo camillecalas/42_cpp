@@ -4,24 +4,24 @@
 ClapTrap::ClapTrap():
 _name("Unkown"), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap | Constructor called" << std::endl;
 	return ;
 }
 ClapTrap::ClapTrap(std::string name): 
 _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
-	std::cout << "String constructor called" << std::endl;
+	std::cout << "ClapTrap | String constructor called" << std::endl;
 	return ;
 }
 ClapTrap::ClapTrap(ClapTrap const &copy)
 {
-	std::cout << "Copy constructor callled" << std::endl;
+	std::cout << "ClapTrap | Copy constructor callled" << std::endl;
 	*this = copy;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap | Destructor called" << std::endl;
 	return ;
 }
 
@@ -59,6 +59,11 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+	if (amount > 10)
+	{
+		std::cout << "No negative number allowed and the maximum amount of damage possible is " << 10 << std::endl;
+		return ;
+	}
 	if (_hit_points <= 0)
 	{
 		std::cout << "ClapTrap " << getName() << " is already dead " << std::endl;
@@ -69,17 +74,25 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (_hit_points <= 0)
 		std::cout << " ClapTrap " << getName() << " is now dead " << std::endl;
 	else
+	{
+		if (_hit_points >= 10)
+			_hit_points = 10;
 		std::cout << " Life points = " << getHit() << std::endl;
+	}
 	return ;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (amount >= 10)
+	{
+		std::cout << "No negative number allowed and the maximum amount of repirs possible is " << 10 << std::endl;
+		return ;
+	}
 	if (!_hit_points)
 		std::cout << "ClapTrap " << getName() << " is already dead" << std::endl;
-	else if (!_energy_points)
+	else if (_energy_points <= 0)
 		std::cout << "ClapTrap " << getName() << " is too weak to heal" << std::endl;
-	_hit_points += amount;
 	else if (_hit_points >= 10)
 		std::cout << "ClapTrap " <<	getName() << " has already full points: 10" << std::endl;
 	else if (_energy_points && _hit_points && _hit_points < 10
@@ -87,6 +100,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	{
 		_energy_points -= 1;
 		std::cout << "ClapTrap " << getName() << " earned " << amount << " points of energy" << std::endl;
+		_hit_points += amount;
 	}
 	if (_hit_points >= 10)
 		_hit_points = 10;

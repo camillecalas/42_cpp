@@ -12,14 +12,15 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap(std::string);
 		DiamondTrap(DiamondTrap const &);
 		~DiamondTrap();
-		DiamondTrap & operator=(DiamondTrap const &rhs);
+		DiamondTrap &	operator=(DiamondTrap const &rhs);
 
-		using		ScavTrap::attack;
-		void		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount);
-		void		whoAmI();
-		using		ScavTrap::guardGate;
-		using		FragTrap::highFivesGuys;
+		// using			ScavTrap::attack;
+		using			ScavTrap::guardGate;
+		using			FragTrap::highFivesGuys;
+		virtual void	attack(const std::string &target);
+		// virtual void	beRepaired(unsigned int amount);
+		// virtual void	takeDamage(unsigned int amount);
+		void			whoAmI();
 	
 	private:
 		std::string	_name;
