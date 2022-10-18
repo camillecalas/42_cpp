@@ -1,0 +1,8 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/camille/Desktop/42_cpp/CPP/CPP3/ex01'
+c++  -Wall -Wextra -Werror -std=c++98 -g  -c -o main.o main.cpp
+c++  -Wall -Wextra -Werror -std=c++98 -g  -c -o ClapTrap.o ClapTrap.cpp
+c++  -Wall -Wextra -Werror -std=c++98 -g  -c -o ScavTrap.o ScavTrap.cpp
+c++ -Wall -Wextra -Werror -std=c++98 -g -o ClapTrap main.o ClapTrap.o ScavTrap.o
+make: Leaving directory `/Users/camille/Desktop/42_cpp/CPP/CPP3/ex01'
+ 

@@ -4,24 +4,24 @@
 ClapTrap::ClapTrap():
 _name("Unkown"), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default  | Default constructor called" << std::endl;
 	return ;
 }
 ClapTrap::ClapTrap(std::string name): 
-_name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
+_name(name), _hit_points(100), _energy_points(100), _attack_damage(0)
 {
-	std::cout << "String constructor called" << std::endl;
+	std::cout << "Default  | String constructor called" << std::endl;
 	return ;
 }
 ClapTrap::ClapTrap(ClapTrap const &copy)
 {
-	std::cout << "Copy constructor callled" << std::endl;
+	std::cout << "Default  | Copy constructor callled" << std::endl;
 	*this = copy;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Default  | Destructor called" << std::endl;
 	return ;
 }
 
@@ -40,6 +40,7 @@ ClapTrap & ClapTrap::operator=(ClapTrap const &rhs)
 /************************ METHODES ************************/
 void ClapTrap::attack(const std::string& target)
 {
+	std::cout << "ENERGY = "<< _energy_points << std::endl;
 	if (target.empty())
 	{
 		std::cout << "Target is missing" << std::endl;
@@ -79,17 +80,17 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << getName() << " is already dead" << std::endl;
 	else if (!_energy_points)
 		std::cout << "ClapTrap " << getName() << " is too weak to heal" << std::endl;
-	_hit_points += amount;
-	else if (_hit_points >= 10)
+	else if (_hit_points == 100)
 		std::cout << "ClapTrap " <<	getName() << " has already full points: 10" << std::endl;
-	else if (_energy_points && _hit_points && _hit_points < 10
-		&& (amount > 0 && amount <= 10))
+	else if (_energy_points && _hit_points && _hit_points < 100
+		&& (amount > 0 && amount <= 100))
 	{
 		_energy_points -= 1;
 		std::cout << "ClapTrap " << getName() << " earned " << amount << " points of energy" << std::endl;
+		_hit_points += amount;
 	}
-	if (_hit_points >= 10)
-		_hit_points = 10;
+	if (_hit_points >= 100)
+		_hit_points = 100;
 	return ;
 }
 
