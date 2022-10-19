@@ -1,0 +1,12 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/camille/Desktop/42_cpp/CPP/CPP4/ex03'
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c main.cpp -o objects/main.o 
+ 
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c AMateria.cpp -o objects/AMateria.o 
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c Ice.cpp -o objects/Ice.o 
+c++ -Wall -Werror -Wextra -std=c++98 objects/main.o objects/AMateria.o objects/Ice.o -o Animal
+make: Leaving directory `/Users/camille/Desktop/42_cpp/CPP/CPP4/ex03'
+ 
