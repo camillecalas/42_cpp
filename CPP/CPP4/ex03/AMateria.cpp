@@ -3,19 +3,35 @@
 
 AMateria::AMateria()
 {
-	std::cout << std::setw(10) << "AMateria" << "| Constructor" << std::endl;
+	std::cout << "AMateria| Constructor" << std::endl;
 }
 
 AMateria::AMateria(AMateria const & copy)
 {
 	*this = copy;
-	std::cout << std::setw(10) << "AMateria" << "| Copy Constructor" << std::endl;
+	std::cout << "AMateria| Copy Constructor" << std::endl;
 }
+
 AMateria::AMateria(std::string const & type) : _type(type)
 {
-	std::cout << std::setw(10) << "AMateria" << "| Surcharged Constructor" << std::endl;
+	std::cout <<  "AMateria| Surcharged Constructor" << std::endl;
 }
+
 AMateria::~AMateria()
 {
-	std::cout << std::setw(10) << "AMateria" << "| Destructor" << std::endl;
+	std::cout << "AMateria| Destructor" << std::endl;
+}
+
+
+AMateria &	AMateria::operator=(AMateria const & rhs)
+{
+	if (this == &rhs)
+		return (*this);
+	_type = rhs._type;
+	return (*this);
+}
+
+std::string const & AMateria::getType() const
+{
+	return (this->_type);
 }

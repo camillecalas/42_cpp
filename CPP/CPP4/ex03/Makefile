@@ -1,4 +1,4 @@
-NAME =	Animal
+NAME =	AMateria
 
 SRCS =	main.cpp\
 		AMateria.cpp\

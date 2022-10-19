@@ -9,7 +9,7 @@ class AMateria
 		AMateria();
 		AMateria(AMateria const &);
 		AMateria(std::string const & type);
-		~AMateria();
+		virtual ~AMateria();
 
 		AMateria &			operator=(AMateria const &);
 
