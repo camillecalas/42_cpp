@@ -10,14 +10,12 @@ class Ice : public AMateria
 	public:
 		Ice();
 		Ice(Ice const &);
-		Ice(std::string const & type);
 		virtual ~Ice();
 
 		Ice &			operator=(Ice const &);
 
 		virtual	AMateria* 	clone() const;
-
-	protected:
+		virtual void 		use(ICharacter& target);
 
 };
 

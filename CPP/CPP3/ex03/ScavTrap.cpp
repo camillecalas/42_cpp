@@ -19,12 +19,12 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	_value = _hit_points;
 	return ;
 }
-ScavTrap::ScavTrap(ScavTrap const &copy)
+ScavTrap::ScavTrap(ScavTrap const &copy): ClapTrap()
 {
 	std::cout << "ScavTrap    | Copy constructor callled" << std::endl;
 	*this = copy;
 }
-ScavTrap::~ScavTrap()
+ScavTrap::~ScavTrap() 
 {
 	std::cout << "ScavTrap    | Destructor called" << std::endl;
 	return ;	

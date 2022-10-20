@@ -3,6 +3,7 @@ NAME =	AMateria
 SRCS =	main.cpp\
 		AMateria.cpp\
 		Ice.cpp\
+		ICharacter.cpp\
 
 CC = c++
 

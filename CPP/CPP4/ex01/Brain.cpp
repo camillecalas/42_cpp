@@ -34,7 +34,7 @@ void		Brain::setIdea(int i, std::string str)
 	_ideas[i] = str;
 }
 
-std::string	Brain::getIdea(int i)
+std::string	Brain::getIdea(int i) const
 {
 	if (i >= MAX_IDEAS)
 		return ("Too much ideas");

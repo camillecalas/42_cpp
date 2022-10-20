@@ -92,9 +92,7 @@ int	main(void)
 		std::cout << " *** High Fives *** " << \
 		std::endl;
 		FragTrap	hulk("Hulk");
-		FragTrap	henry(hulk);
 		hulk.highFivesGuys();
-		henry.highFivesGuys();
 	}
 	{
 		std::cout << std::endl;

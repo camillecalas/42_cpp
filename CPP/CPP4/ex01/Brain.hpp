@@ -12,9 +12,10 @@ class Brain
 		Brain(Brain const &copy);
 		virtual ~Brain();
 
-		Brain	&	operator=(Brain const &);
+		Brain &		operator=(Brain const &);
+
 		void		setIdea(int, std::string);
-		std::string	getIdea(int);
+		std::string	getIdea(int) const;
 
 	private:
 		std::string	_ideas[MAX_IDEAS];

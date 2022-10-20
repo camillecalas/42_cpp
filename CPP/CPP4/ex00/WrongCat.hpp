@@ -12,9 +12,9 @@ class WrongCat : public WrongAnimal
 		WrongCat(std::string);
 		virtual ~WrongCat();
 
-		WrongCat	&	operator=(WrongCat const &);
+		WrongCat &	operator=(WrongCat const &);
 
-		void	makeSound(void) const;
+		void		makeSound(void) const;
 };
 
 #endif

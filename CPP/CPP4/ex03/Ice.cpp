@@ -1,27 +1,23 @@
 #include "Ice.hpp"
 
+/*************** CONSTRUCTOR | DESTRUCTOR ***************/
 Ice::Ice() : AMateria("ice")
 {
-	std::cout << "Ice     | Constructor" << std::endl;
+	std::cout << "Ice       | Constructor" << std::endl;
 }
 
 Ice::Ice(Ice const & copy)
 {
 	*this = copy;
-	std::cout  << "Ice     | Copy Constructor" << std::endl;
-}
-
-Ice::Ice(std::string const & type) : AMateria()
-{
-	_type = type;
-	std::cout <<  "Ice     | Surcharged Constructor" << std::endl;
+	std::cout  << "Ice       | Copy Constructor" << std::endl;
 }
 
 Ice::~Ice()
 {
-	std::cout << "Ice     | Destructor" << std::endl;
+	std::cout << "Ice       | Destructor" << std::endl;
 }
 
+/******************* OPERATORS OVERLOAD *******************/
 Ice &	Ice::operator=(Ice const &rhs)
 {
 	if (this == &rhs)
@@ -30,10 +26,13 @@ Ice &	Ice::operator=(Ice const &rhs)
 	return (*this);
 }
 
+/************************ METHODES ************************/
 AMateria *	Ice::clone() const
 {
-	// Ice *iceNew = new Ice();
-	// return (iceNew);
 	return (new Ice (*this));
+}
 
+void 	Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

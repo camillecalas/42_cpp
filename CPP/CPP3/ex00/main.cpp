@@ -79,7 +79,7 @@ int	main()
 		std::cout << " *** Repair when already has full points *** " << \
 		std::endl;
 		ClapTrap	hulk("Hulk");
-		hulk.beRepaired(10);
+		hulk.beRepaired(9);
 	}
 		{
 		std::cout << std::endl;
