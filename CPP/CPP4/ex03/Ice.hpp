@@ -15,7 +15,7 @@ class Ice : public AMateria
 
 		Ice &			operator=(Ice const &);
 
-		virtual Ice *	clone() const;
+		virtual	AMateria* 	clone() const;
 
 	protected:
 

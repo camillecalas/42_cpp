@@ -8,11 +8,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Wed Oct 19 23:40:41 2022
+# Make data base, printed on Thu Oct 20 09:21:49 2022
 
 # Variables
 
- 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -34,6 +33,7 @@ _ = /usr/bin/make
 # makefile (from `Makefile', line 13)
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 # makefile (from `Makefile', line 1)
+ 
 MAKEFILE_LIST :=  Makefile
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
@@ -46,11 +46,13 @@ PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
+LaunchInstanceID = 5CDA545F-D3DD-456B-BEFD-C9821FC64431
+# environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.kXNXcD4B4a/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.nXaNLGvTan/Listeners
 # automatic
 %F = $(notdir $%)
 # makefile (from `Makefile', line 10)
@@ -66,7 +68,7 @@ HOME = /Users/camille
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/camille/Library/Application Support/Code/CachedData/74b1f979648cc44d385a2286793c226e611f59e7
+VSCODE_CODE_CACHE_PATH = /Users/camille/Library/Application Support/Code/CachedData/d045a5eda657f4d7b676dedbfa7aab8207f8a075
 # environment
 LOGNAME = camille
 # environment
@@ -110,7 +112,7 @@ TMPDIR = /var/folders/q6/xh_3x3w130j53vj90m_vnq500000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/camille/Library/Application Support/Code/1.71.2-main.sock
+VSCODE_IPC_HOOK = /Users/camille/Library/Application Support/Code/1.72.2-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -120,7 +122,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.76545528.76545535
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.77505808.77505814
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -137,6 +139,8 @@ MAKEFILES :=
 PAGER = less
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186c1
 # automatic
 ^F = $(notdir $^)
 # default
@@ -148,9 +152,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3191
+VSCODE_PID = 939
 # variable set hash-table stats:
-# Load=68/1024=7%, Rehash=0, Collisions=7/108=6%
+# Load=70/1024=7%, Rehash=0, Collisions=7/110=6%
 
 # Pattern-specific Variable Values
 
@@ -292,7 +296,6 @@ objects/Ice.o: Ice.cpp
 #  Implicit/static pattern stem: `Ice'
 #  Last modified 2022-10-19 23:40:25
 #  File has been updated.
- 
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
@@ -342,6 +345,6 @@ AMateria: objects/main.o objects/AMateria.o objects/Ice.o
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Oct 19 23:40:41 2022
+# Finished Make data base on Thu Oct 20 09:21:49 2022
 
  

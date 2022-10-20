@@ -30,9 +30,10 @@ Ice &	Ice::operator=(Ice const &rhs)
 	return (*this);
 }
 
-Ice *	Ice::clone() const
+AMateria *	Ice::clone() const
 {
-	Ice *iceNew = new Ice();
-	return (iceNew);
+	// Ice *iceNew = new Ice();
+	// return (iceNew);
+	return (new Ice (*this));
 
 }
