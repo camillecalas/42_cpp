@@ -1,7 +1,7 @@
 #include "DiamondTrap.hpp"
 
 /*********************** CONSTRUCTORS ***********************/
-DiamondTrap::DiamondTrap() : ClapTrap("Unkown_clap_name"), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap() : ClapTrap("Unkown_clap_name")
 {
 	this->_name = "Unkown";
 	this->_hit_points = FragTrap::_hit_points;
@@ -10,13 +10,13 @@ DiamondTrap::DiamondTrap() : ClapTrap("Unkown_clap_name"), ScavTrap(), FragTrap(
 	std::cout << "DiamondTrap | Constructor called" << std::endl;
 	return ;
 }
-DiamondTrap::DiamondTrap(DiamondTrap const &copy) : ClapTrap(), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(DiamondTrap const &copy) : ClapTrap(copy), ScavTrap(copy), FragTrap(copy)
 {
 	std::cout << "DiamondTrap | Copy constructor callled" << std::endl;
 	*this = copy;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_trap"), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_trap")
 {
 	std::cout << "DiamondTrap | String constructor called" << std::endl;
 	this->_name = name;
