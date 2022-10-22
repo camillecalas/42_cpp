@@ -27,38 +27,6 @@ int main()
 		// delete meta;
 		// meta = 0;
 	}
-	// {
-	// 	std::cout << std::endl;
-	// 	std::cout << "/*** Constructors surcharges ***/" << std::endl;
-	// 	const Animal* meta = new Animal();
-	// 	const Animal* j = new Dog("CHIEN");
-	// 	const Animal* i = new Cat("CHAT");
-	// 	std::cout << std::endl;
-	// 	std::cout << j->getType() << " " << std::endl;
-	// 	std::cout << i->getType() << " " << std::endl;
-	// 	std::cout << std::endl;
-	// 	i->makeSound(); //will output the cat sound!
-	// 	j->makeSound();
-	// 	meta->makeSound();
-	// 	std::cout << std::endl;
-	// 	delete j;
-	// 	j = 0;
-	// 	delete i;
-	// 	i = 0;
-	// 	delete meta;
-	// 	meta = 0;
-	// }
-	// {
-	// 	Dog	*dog = new Dog();
-	// 	Dog *dog2 = new Dog("CHIEN");
-
-	// 	*dog = *dog2;
-	// 	delete dog;
-	// 	dog = 0;
-	// 	delete dog2;
-	// 	dog2= 0;
-	// }
-		
 	{
 		std::cout << "/*** Constructors par defauts ***/" << std::endl;
 
@@ -84,28 +52,33 @@ int main()
 		}
 	}
 	{
+		std::cout << std::endl;
 		std::cout << "/*** Constructors par copie ***/" << std::endl;
 
 		Dog *dog = new Dog();
 		std::cout << std::endl;
 
-		dog->setIdea(0, "FOOD");
+		dog->setIdea(0, "Idea : FOOD");
 		std::cout << dog->getIdea(0) << std::endl;
-		dog->setIdea(1, "SLEEP");
+		dog->setIdea(1, "Idea : SLEEP");
 		std::cout << dog->getIdea(1) << std::endl;
-		dog->setIdea(0, "ER");
+		dog->setIdea(0, "Idea : ER");
 		std::cout << dog->getIdea(0) << std::endl;
 		std::cout << std::endl;
 
-
+		std::cout << "** init dog_bis **" << std::endl;
 		Dog	*dog_bis = new Dog(*dog);
 		std::cout << std::endl;
+		std::cout << "dog = " << dog->getIdea(0) << " | dog_bis = " << dog_bis->getIdea(0) << std::endl;
+		std::cout << "dog = " << dog->getIdea(1) << " | dog_bis = "<< dog_bis->getIdea(1) << std::endl;
 
-		dog_bis->setIdea(10, "FOOD");
+		std::cout << std::endl;
+		std::cout << "** dog_bis new ideas **" << std::endl;
+		dog_bis->setIdea(10, "Idea : FOOD");
 		std::cout << dog_bis->getIdea(0) << std::endl;
-		dog_bis->setIdea(56, "SLEEP");
+		dog_bis->setIdea(56, "Idea : SLEEP");
 		std::cout << dog_bis->getIdea(1) << std::endl;
-		dog_bis->setIdea(99, "ER");
+		dog_bis->setIdea(99, "Idea : ER");
 		std::cout << dog_bis->getIdea(0) << std::endl;
 		std::cout << std::endl;
 
@@ -122,7 +95,7 @@ int main()
 
 	// Animal	*animals[100];
 
-	// std::cout << " *** Creating 50 dogs then 50 cats from Animal class *** " \
+	// std::cout << " *** Creating 50 dogs then 50 cats from Animal class *** " 
 	// << std::endl;
 
 	// for (int i = 0; i < 50; i++)
@@ -135,11 +108,11 @@ int main()
 	// std::cout << " *** Checking their types *** " << std::endl;
 
 	// for (int i = 0; i < 100; i++)
-	// 	std::cout << "This animal type is " << animals[i]->getType() << \
+	// 	std::cout << "This animal type is " << animals[i]->getType() << 
 	// 	"." << std::endl;
 
 	// std::cout << std::endl;
-	// std::cout << " *** Setting an idea to the 25th dog and the last cat *** " \
+	// std::cout << " *** Setting an idea to the 25th dog and the last cat *** " 
 	// << std::endl;
 
 	// animals[24]->setIdea(0, "woofie woof woof?");
@@ -152,7 +125,7 @@ int main()
 	// std::cout << "Cat is having an idea: " << animals[99]->getIdea(99) << std::endl;
 
 	// std::cout << std::endl;
-	// std::cout << " *** Trying to set an idea too big for the brain *** " \
+	// std::cout << " *** Trying to set an idea too big for the brain *** " 
 	// << std::endl;
 
 	// animals[0]->setIdea(100, "WOOOOOOOOOOF");

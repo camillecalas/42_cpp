@@ -19,7 +19,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	_value = _hit_points;
 	return ;
 }
-FragTrap::FragTrap(FragTrap const & copy): ClapTrap()
+FragTrap::FragTrap(FragTrap const & copy): ClapTrap(copy)
 {
 	std::cout << "FragTrap    | Copy constructor callled" << std::endl;
 	*this = copy;

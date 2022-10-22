@@ -6,20 +6,20 @@ Cat::Cat() : Animal(), _brain(new Brain)
 	_type = "CAT";
 	std::cout << "Cat    | Constructor" << std::endl;
 }
-/*******************************************************/
-Cat::Cat(std::string type) : _brain(new Brain)
+
+Cat::Cat(std::string type) : Animal(type), _brain(new Brain)
 {
 	_type = type;
 	std::cout << "Cat    | Surcharged Constructor" << std::endl;
 }
-/*******************************************************/
-Cat::Cat(Cat const &copy) : _brain(0)
+
+Cat::Cat(Cat const &copy) : Animal(copy), _brain(0)
 {
-	std::cout << "Cat    | Copy Constructor" << std::endl;
 	_brain = new Brain(*(copy._brain));
 	*this = copy;
+	std::cout << "Cat    | Copy Constructor" << std::endl;
 }
-/*******************************************************/
+
 Cat::~Cat()
 {
 	delete _brain;
@@ -41,4 +41,14 @@ Cat	& Cat::operator=(Cat const &rhs)
 void	Cat::makeSound(void) const
 {
 	std::cout << "MIAOU" << std::endl;
+}
+/*******************************************************/
+void	Cat::setIdea(int i, std::string str)
+{
+	_brain->setIdea(i, str);
+}
+/*******************************************************/
+std::string	Cat::getIdea(int i)
+{
+	return (_brain->getIdea(i));
 }

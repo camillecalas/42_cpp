@@ -6,12 +6,12 @@ Cat::Cat() : Animal()
 	_type = "CAT";
 	std::cout << "Cat    | Constructor" << std::endl;
 }
-Cat::Cat(std::string type)
+Cat::Cat(std::string type) : Animal(type)
 {
 	_type = type;
 	std::cout << "Cat    | Surcharged Constructor" << std::endl;
 }
-Cat::Cat(Cat const &copy)
+Cat::Cat(Cat const &copy) : Animal(copy)
 {
 	std::cout << "Cat    | Copy Constructor" << std::endl;
 	*this = copy;

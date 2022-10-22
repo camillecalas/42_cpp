@@ -5,15 +5,18 @@ WrongAnimal::WrongAnimal()
 {
 	std::cout << "WrongAnimal | Constructor" << std::endl;
 }
+
 WrongAnimal::WrongAnimal(WrongAnimal const &copy)
 {
 	std::cout << "WrongAnimal | Copy Constructor" << std::endl;
 	*this = copy;
 }
+
 WrongAnimal::WrongAnimal(std::string type) : _type(type)
 {
 	std::cout << "WrongAnimal | Surcharged Constructor" << std::endl;
 }
+
 WrongAnimal::~WrongAnimal()
 {
 	std::cout << "WrongAnimal | Destructor" << std::endl;

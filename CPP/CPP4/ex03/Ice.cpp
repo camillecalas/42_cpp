@@ -6,7 +6,7 @@ Ice::Ice() : AMateria("ice")
 	std::cout << "Ice       | Constructor" << std::endl;
 }
 
-Ice::Ice(Ice const & copy)
+Ice::Ice(Ice const & copy) : AMateria(copy)
 {
 	*this = copy;
 	std::cout  << "Ice       | Copy Constructor" << std::endl;
@@ -18,11 +18,8 @@ Ice::~Ice()
 }
 
 /******************* OPERATORS OVERLOAD *******************/
-Ice &	Ice::operator=(Ice const &rhs)
+Ice &	Ice::operator=(Ice const &)
 {
-	if (this == &rhs)
-		return (*this);
-	_type = rhs._type;
 	return (*this);
 }
 

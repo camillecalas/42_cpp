@@ -1,20 +1,19 @@
 #include "Dog.hpp"
 
 /*************** CONSTRUCTOR | DESTRUCTOR ***************/
-Dog::Dog() : Animal(), _brain(0)
+Dog::Dog() : Animal(), _brain(new Brain)
 {
-	_brain = new Brain;
 	_type = "DOG";
 	std::cout << "Dog    | Constructor" << std::endl;
 }
 /*******************************************************/
-Dog::Dog(std::string type) : _brain(new Brain)
+Dog::Dog(std::string type) : Animal(type), _brain(new Brain)
 {
 	_type = type;
 	std::cout << "Dog    | Surcharged Constructor" << std::endl;
 }
 /*******************************************************/
-Dog::Dog(Dog const &copy) : _brain(0)
+Dog::Dog(Dog const &copy) : Animal(copy), _brain(0)
 {
 	std::cout << "Dog    | Copy Constructor" << std::endl;
 	_brain = new Brain(*(copy._brain));

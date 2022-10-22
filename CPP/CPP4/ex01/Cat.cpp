@@ -7,13 +7,13 @@ Cat::Cat() : Animal(), _brain(new Brain)
 	std::cout << "Cat    | Constructor" << std::endl;
 }
 /*******************************************************/
-Cat::Cat(std::string type) : _brain(new Brain)
+Cat::Cat(std::string type) : Animal(type), _brain(new Brain)
 {
 	_type = type;
 	std::cout << "Cat    | Surcharged Constructor" << std::endl;
 }
 /*******************************************************/
-Cat::Cat(Cat const &copy) : _brain(0)
+Cat::Cat(Cat const &copy) : Animal(copy), _brain(0)
 {
 	std::cout << "Cat    | Copy Constructor" << std::endl;
 	_brain = new Brain(*(copy._brain));

@@ -5,16 +5,19 @@ WrongCat::WrongCat() : WrongAnimal()
 {
 	std::cout << "WrongCat    | Constructor" << std::endl;
 }
-WrongCat::WrongCat(WrongCat const &copy)
-{
-	std::cout << "WrongCat    | Copy Constructor" << std::endl;
-	*this = copy;
-}
-WrongCat::WrongCat(std::string type)
+
+WrongCat::WrongCat(std::string type) : WrongAnimal(type)
 {
 	_type = type;
 	std::cout << "WrongCat    | Surcharged Constructor" << std::endl;
 }
+
+WrongCat::WrongCat(WrongCat const &copy) : WrongAnimal(copy)
+{
+	std::cout << "WrongCat    | Copy Constructor" << std::endl;
+	*this = copy;
+}
+
 WrongCat::~WrongCat()
 {
 	std::cout << "WrongCat    | Destructor" << std::endl;
