@@ -9,7 +9,6 @@ class Cat : public Animal
 	public:
 		Cat();
 		Cat(Cat const &copy);
-		Cat(std::string);
 		virtual ~Cat();
 
 		Cat	&			operator=(Cat const &);

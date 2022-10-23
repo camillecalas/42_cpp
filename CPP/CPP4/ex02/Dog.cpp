@@ -1,19 +1,13 @@
 #include "Dog.hpp"
 
 /*************** CONSTRUCTOR | DESTRUCTOR ***************/
-Dog::Dog() : Animal(), _brain(new Brain)
+Dog::Dog() : Animal("DOG"), _brain(new Brain)
 {
 	_type = "DOG";
 	std::cout << "Dog    | Constructor" << std::endl;
 }
 
-Dog::Dog(std::string type) : _brain(new Brain)
-{
-	_type = type;
-	std::cout << "Dog    | Surcharged Constructor" << std::endl;
-}
-
-Dog::Dog(Dog const &copy) : Animal(copy), _brain(0)
+Dog::Dog(Dog const &copy) : Animal(), _brain(0)
 {
 	std::cout << "Dog    | Copy Constructor" << std::endl;
 	_brain = new Brain(*(copy._brain));
@@ -44,12 +38,12 @@ void	Dog::makeSound(void) const
 {
 	std::cout << "WOUAF" << std::endl;
 }
-/*******************************************************/
+
 void	Dog::setIdea(int i, std::string str)
 {
 	_brain->setIdea(i, str);
 }
-/*******************************************************/
+
 std::string	Dog::getIdea(int i)
 {
 	return (_brain->getIdea(i));

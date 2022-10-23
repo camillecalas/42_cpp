@@ -24,6 +24,8 @@ class Character : public ICharacter
 
 	private:
 		std::string	_name;
+		int			*i;
+		AMateria	*_saveinventory[MAX_ITEMS];
 		AMateria	*_inventory[MAX_ITEMS];
 
 };

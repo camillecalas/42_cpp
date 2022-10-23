@@ -43,6 +43,22 @@ int main()
 	}
 	{
 		std::cout << std::endl;
+		std::cout << "/*** Cat ***/" << std::endl;
+		Cat *cat = new Cat();
+		std::cout << std::endl;
+		cat->setIdea(0, "Idea : CATSLEEP");
+		std::cout << cat->getIdea(0) << std::endl;
+		cat->setIdea(1, "Idea : CATFOOD");
+		std::cout << cat->getIdea(1) << std::endl;
+		cat->setIdea(0, "Idea : CATPLAY");
+		std::cout << cat->getIdea(0) << std::endl;
+		std::cout << std::endl;
+
+		delete (cat);
+	}
+
+	{
+		std::cout << std::endl;
 		std::cout << "/*** Constructors par copie ***/" << std::endl;
 
 		Dog *dog = new Dog();

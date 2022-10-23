@@ -24,7 +24,7 @@ Brain	& Brain::operator=(Brain const &rhs)
 	return (*this);
 }
 /************************ METHODES ************************/
-void		Brain::setIdea(int i, std::string str)
+void	Brain::setIdea(int i, std::string str)
 {
 	if (i >= MAX_IDEAS)
 	{

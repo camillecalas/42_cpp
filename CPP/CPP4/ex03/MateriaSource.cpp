@@ -41,23 +41,22 @@ void	MateriaSource::learnMateria(AMateria* m)
 		if (_inventory[i] == NULL)
 		{
 			_inventory[i] = m;
-			break ;
+			return ;
 		}
 	}
+	std::cerr << "MateriaSource is full!\n";
+	// This function is void, the caller cannot handle error cases, thus, we
+    // need to delete the material here to avoid memory leaks
+	delete (m);
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type)
 {
-	if (!type.compare("ice"))
+	for (int i = 0; i < MAX_ITEMS; i++)
 	{
-		AMateria *ice = new Ice();
-		return (ice);
+		if (_inventory[i] && _inventory[i]->getType() == type)
+			return (_inventory[i]->clone());
 	}
-	else if (!type.compare("cure"))
-	{
-		AMateria *cure = new Cure();
-		return (cure);
-	}
+	std::cerr << "No " << type << " found in MateriaSource\n";
 	return (0);
-
 }

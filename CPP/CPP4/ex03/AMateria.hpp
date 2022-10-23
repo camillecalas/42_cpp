@@ -4,6 +4,8 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
+// static int x = 0;
+
 class AMateria
 {
 	public:
@@ -17,10 +19,10 @@ class AMateria
 		std::string const & getType() const; //Returns the materia type
 		virtual AMateria* 	clone() const = 0;
 		virtual void 		use(ICharacter& target);
-		// virtual void		set_type(std::string const &);
 
 	protected:
 		std::string	_type;
+		// AMateria	*_save[1024];
 
 };
 

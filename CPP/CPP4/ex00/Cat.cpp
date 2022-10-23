@@ -1,21 +1,18 @@
 #include "Cat.hpp"
 
 /*************** CONSTRUCTOR | DESTRUCTOR ***************/
-Cat::Cat() : Animal()
+Cat::Cat() : Animal("CAT")
 {
-	_type = "CAT";
+	
 	std::cout << "Cat    | Constructor" << std::endl;
 }
-Cat::Cat(std::string type) : Animal(type)
-{
-	_type = type;
-	std::cout << "Cat    | Surcharged Constructor" << std::endl;
-}
-Cat::Cat(Cat const &copy) : Animal(copy)
+
+Cat::Cat(Cat const &copy) : Animal()
 {
 	std::cout << "Cat    | Copy Constructor" << std::endl;
 	*this = copy;
 }
+
 Cat::~Cat()
 {
 	std::cout << "Cat    | Destructor" << std::endl;

@@ -20,6 +20,4 @@ class Animal
 		std::string	_type;
 };
 
-void	makeSound(Animal const & animal);
-
 #endif

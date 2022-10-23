@@ -13,13 +13,13 @@ class Animal
 
 		Animal &		operator=(Animal const &);
 
-		std::string		getType(void) const;
 		virtual void	makeSound(void) const;
+
+		//getters
+		std::string		getType(void) const;
 
 	protected:
 		std::string	_type;
 };
-
-void	makeSound(Animal const & animal);
 
 #endif

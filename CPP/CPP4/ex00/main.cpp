@@ -7,7 +7,7 @@
 int main()
 {
 	{
-		std::cout << "/*** Constructors par defauts ***/" << std::endl;
+		std::cout << "/*** Test given ***/" << std::endl;
 		const Animal* meta = new Animal();
 		const Animal* j = new Dog();
 		const Animal* i = new Cat();
@@ -27,54 +27,7 @@ int main()
 		meta = 0;
 	}
 	{
-		std::cout << std::endl;
-		std::cout << "/*** Constructors surcharges ***/" << std::endl;
-		const Animal* meta = new Animal();
-		const Animal* j = new Dog("CHIEN");
-		const Animal* i = new Cat("CHAT");
-		std::cout << std::endl;
-		std::cout << j->getType() << " " << std::endl;
-		std::cout << i->getType() << " " << std::endl;
-		std::cout << std::endl;
-		i->makeSound(); //will output the cat sound!
-		j->makeSound();
-		meta->makeSound();
-		std::cout << std::endl;
-		delete j;
-		j = 0;
-		delete i;
-		i = 0;
-		delete meta;
-		meta = 0;
-	}
-	// {
-	// 	std::cout << std::endl;
-	// 	std::cout << "/*** Constructors par copies ***/" << std::endl;
-	// 	const Animal* meta = new Animal();
-	// 	const Dog* j = new Dog();
-	//  	const Animal* j_bis = new Dog(*j);(void)j_bis;
-	// 	const Animal* i = new Cat("CHAT");
-	// 	std::cout << std::endl;
-	// 	std::cout << j->getType() << " " << std::endl;
-	// 	std::cout << i->getType() << " " << std::endl;
-	// 	std::cout << std::endl;
-	// 	i->makeSound(); //will output the cat sound!
-	// 	j->makeSound();
-	// 	meta->makeSound();
-	// 	std::cout << std::endl;
-	// 	delete j;
-	// 	j = 0;
-	// 	delete i;
-	// 	i = 0;
-	// 	delete meta;
-	// 	meta = 0;
-	// }
-
-
-
-
-	std::cout << "*******************" << std::endl;
-	{
+		std::cout << "*******************" << std::endl;
 		const WrongAnimal* meta = new WrongAnimal();
 		const WrongAnimal* i = new WrongCat();
 		std::cout << i->getType() << " " << std::endl;
@@ -86,7 +39,6 @@ int main()
 		delete meta;
 		meta = 0;
 	}
-
 
 	return 0;
 }

@@ -10,12 +10,13 @@ class Cat : public Animal
 	public:
 		Cat();
 		Cat(Cat const &copy);
-		Cat(std::string);
 		virtual ~Cat();
 
 		Cat	&			operator=(Cat const &);
 
 		virtual void	makeSound(void) const;
+		void			setIdea(int, std::string);
+		std::string		getIdea(int);
 
 	private:
 		Brain	*_brain;

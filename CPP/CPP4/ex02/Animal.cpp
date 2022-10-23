@@ -27,11 +27,6 @@ Animal	& Animal::operator=(Animal const &rhs)
 	return (*this);
 }
 /************************ METHODES ************************/
-// void	Animal::makeSound(void) const
-// {
-// 	std::cout << "ANIMAL" << std::endl;
-// }
-
 std::string	Animal::getType() const
 {
 	return (_type);

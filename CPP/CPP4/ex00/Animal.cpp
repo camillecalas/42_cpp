@@ -5,15 +5,18 @@ Animal::Animal() :_type("Unkown")
 {
 	std::cout << "Animal | Constructor" << std::endl;
 }
+
 Animal::Animal(Animal const &copy)
 {
 	std::cout << "Animal | Copy Constructor" << std::endl;
 	*this = copy;
 }
+
 Animal::Animal(std::string type) : _type(type)
 {
 	std::cout << "Animal | Surcharged Constructor" << std::endl;
 }
+
 Animal::~Animal()
 {
 	std::cout << "Animal | Destructor" << std::endl;
