@@ -1,24 +1,24 @@
 #include "Character.hpp"
 
 /*************** CONSTRUCTOR | DESTRUCTOR ***************/
-Character::Character() : ICharacter()
+Character::Character() : _name("Unkown")
 {
 	for (int i = 0; i < MAX_ITEMS; i++)
 		_inventory[i] = NULL;
-	std::cout << "Character | Constructor" << std::endl;
+	// std::cout << "Character | Constructor" << std::endl;
 }
 
 Character::Character(std::string const name) : _name(name)
 {
 	for (int i = 0; i < MAX_ITEMS; i++)
-	_inventory[i] = NULL;
-	std::cout  << "Character | Surcharged Constructor" << std::endl;
+		_inventory[i] = NULL;
+	// std::cout  << "Character | Surcharged Constructor" << std::endl;
 }
 
 Character::Character(Character const &copy)
 {
 	*this = copy;
-	std::cout  << "Character | Copy Constructor" << std::endl;
+	// std::cout  << "Character | Copy Constructor" << std::endl;
 }
 
 Character::~Character()
@@ -28,7 +28,7 @@ Character::~Character()
 		delete(_inventory[i]);
 		_inventory[i] = 0;
 	}
-	std::cout << "Character | Destructor" << std::endl;
+	// std::cout << "Character | Destructor" << std::endl;
 }
 
 /******************* OPERATORS OVERLOAD *******************/

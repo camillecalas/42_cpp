@@ -4,7 +4,7 @@
 #include <iostream>
 #include "IMateriaSource.hpp"
 #include "Ice.hpp"
-// #include "Cure.hpp"
+#include "Cure.hpp"
 
 # define MAX_ITEMS 4
 

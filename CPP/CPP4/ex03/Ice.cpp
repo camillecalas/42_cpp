@@ -3,18 +3,18 @@
 /*************** CONSTRUCTOR | DESTRUCTOR ***************/
 Ice::Ice() : AMateria("ice")
 {
-	std::cout << "Ice       | Constructor" << std::endl;
+	// std::cout << "Ice       | Constructor" << std::endl;
 }
 
-Ice::Ice(Ice const & copy) : AMateria(copy)
+Ice::Ice(Ice const & copy) : AMateria()
 {
 	*this = copy;
-	std::cout  << "Ice       | Copy Constructor" << std::endl;
+	// std::cout  << "Ice       | Copy Constructor" << std::endl;
 }
 
 Ice::~Ice()
 {
-	std::cout << "Ice       | Destructor" << std::endl;
+	// std::cout << "Ice       | Destructor" << std::endl;
 }
 
 /******************* OPERATORS OVERLOAD *******************/
