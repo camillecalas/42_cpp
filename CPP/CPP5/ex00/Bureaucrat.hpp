@@ -9,20 +9,38 @@
 class Bureaucrat
 {
 	public:
+		Bureaucrat();
 		Bureaucrat(std::string, unsigned int);
+		Bureaucrat(Bureaucrat const &);
 		~Bureaucrat();
+
+		Bureaucrat & operator=(Bureaucrat const &);
 
 
 		//Assesseurs :
-		std::string		getName();
-		unsigned int	getGrade();
+		std::string		getName() const;
+		unsigned int	getGrade() const;
 
 		//Manipulateurs :
 		void	IncreaseGrade();
 		void	DecreaseGrade();
 
+		//! ********************************************************
+		class GradeTooHigh : public std::exception
+		{
+			public:
+				virtual const char * what() const throw();
+		};
+
+		class GradeTooLow : public std::exception
+		{
+			public:
+				virtual const char * what() const throw();
+		};
+		//! ********************************************************
+
 	private:
-		std::string const	_name;
+		const std::string 	_name;
 		unsigned int		_grade;
 };
 
