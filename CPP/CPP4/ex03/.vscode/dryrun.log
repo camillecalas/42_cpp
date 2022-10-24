@@ -1,0 +1,17 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/nfs/homes/ccalas/Desktop/42_cpp/CPP/CPP4/ex03'
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c main.cpp -o objects/main.o 
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c AMateria.cpp -o objects/AMateria.o 
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c Ice.cpp -o objects/Ice.o 
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c Cure.cpp -o objects/Cure.o 
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c Character.cpp -o objects/Character.o 
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c MateriaSource.cpp -o objects/MateriaSource.o 
+c++ -Wall -Werror -Wextra -std=c++98 objects/main.o objects/AMateria.o objects/Ice.o objects/Cure.o objects/Character.o objects/MateriaSource.o -o AMateria
+make: Leaving directory '/mnt/nfs/homes/ccalas/Desktop/42_cpp/CPP/CPP4/ex03'
+ 
