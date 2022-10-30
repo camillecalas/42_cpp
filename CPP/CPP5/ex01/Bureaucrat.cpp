@@ -89,6 +89,3 @@ const char *Bureaucrat::GradeTooHigh::what() const throw()
 {
 	return ("Bureaucrat::GradeTooHighException\n");
 }
-		// 	std::string* string_ptr = const_cast<std::string*>(&this->_name);
-		// *string_ptr = rhs._name;
-		// this->_grade = rhs._grade;

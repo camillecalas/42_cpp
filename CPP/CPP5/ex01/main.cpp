@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main()
 {
@@ -116,6 +117,27 @@ int	main()
 		{
 			E.DecreaseGrade();
 			std::cout << E.getName() << " = " << E.getGrade() << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cout << "Exception: " << e.what() << std::endl;
+		}
+	}
+
+	std::cout << std::endl;
+	std::cout << "************************************************************" << std::endl;
+	std::cout << "Create a Form" << std::endl;
+	std::cout << "************************************************************" << std::endl;
+	std::cout << std::endl;
+
+	{
+		Bureaucrat A("henry", 5);
+		Form D("form", 10, 3);
+		std::cout << D.getFormName() << " = " << D.getIsSigned() << std::endl;
+		try
+		{
+			D.beSigned(A);
+			std::cout << D.getFormName() << " = " << D.getIsSigned() << std::endl;
 		}
 		catch (std::exception &e)
 		{
