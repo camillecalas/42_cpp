@@ -2,6 +2,10 @@
 # define FORM_HPP
 
 #include <iostream>
+#include <fstream>
+#include <cerrno>
+#include <iosfwd>
+#include <cstring>
 #include "Bureaucrat.hpp"
 
 # define LOWEST_GRADE 150
@@ -15,7 +19,7 @@ class Form
 		Form();
 		Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute);
 		Form(Form const &);
-		~Form();
+		virtual ~Form();
 
 		Form & 			operator=(Form const &);
 
@@ -26,6 +30,7 @@ class Form
 		std::string		getFormName() const;
 
 		void			beSigned(Bureaucrat &);
+		virtual void	execute(Bureaucrat const &) const = 0;
 
 		//! ********************************************************
 		class FormGradeTooHigh : public std::exception
@@ -39,9 +44,15 @@ class Form
 			public:
 				virtual const char * what() const throw();
 		};
+
+		class FormNotSigned : public std::exception
+		{
+			public:
+				virtual const char * what() const throw();
+		};
 		//! ********************************************************
 
-	private:
+	protected:
 		std::string const	_formName;
 		unsigned int const	_gradeToSign;
 		unsigned int const	_gradeToExecute;

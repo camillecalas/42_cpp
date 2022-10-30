@@ -93,3 +93,8 @@ const char *Form::FormGradeTooHigh::what() const throw()
 {
 	return ("Form::GradeTooHighException\n");
 }
+
+const char *Form::FormNotSigned::what() const throw()
+{
+	return ("Form::FormNotSigned\n");
+}

@@ -3,148 +3,145 @@
 
 int	main()
 {
-	std::cout << std::endl;
-	std::cout << "**************************************" << std::endl;
-	std::cout << "Create a Bureaucrate with a grade of 0" << std::endl;
-	std::cout << "**************************************" << std::endl;
-	std::cout << std::endl;
-
 	{
-		try
+		std::cout << std::endl;
+		std::cout << "****************************************" << std::endl;
+		std::cout << "Create a Bureaucrat and some WRONG Forms" << std::endl;
+		std::cout << "****************************************" << std::endl;
+		std::cout << std::endl;
+
 		{
-			Bureaucrat A("bob", 0);
-		}
-		catch (std::exception &e)
-		{
-			std::cout << "Exception: " << e.what() << std::endl;
+			try
+			{
+				Bureaucrat A("Henry", 5);
+				Form D("Form D", 1, 167);
+				std::cout << A.getName() << " = " << A.getGrade() << std::endl;
+				std::cout << D.getFormName() << " = " << D.getIsSigned() << std::endl;
+			}
+			catch (std::exception &e)
+			{
+				std::cout << "Exception: " << e.what() << std::endl;
+			}
 		}
 	}
 
-	std::cout << std::endl;
-	std::cout << "****************************************************" << std::endl;
-	std::cout << "Create a Bureaucrate with a grade of 23 and decrease" << std::endl;
-	std::cout << "****************************************************" << std::endl;
-	std::cout << std::endl;
-
 	{
-		try
+		std::cout << std::endl;
+		std::cout << "****************************************" << std::endl;
+		std::cout << "Create a Bureaucrat and some WRONG Forms" << std::endl;
+		std::cout << "****************************************" << std::endl;
+		std::cout << std::endl;
+
 		{
-			Bureaucrat A("bob", 23);
-			std::cout << A.getName() << " = " << A.getGrade() << std::endl;
-			A.DecreaseGrade();
-			std::cout << A.getName() << " = " << A.getGrade() << std::endl;
-		}
-		catch (std::exception &e)
-		{
-			std::cout << "Exception: " << e.what() << std::endl;
+			try
+			{
+				Bureaucrat A("Henry", 5);
+				Form D("Form D", -1, 3);
+				std::cout << A.getName() << " = " << A.getGrade() << std::endl;
+				std::cout << D.getFormName() << " = " << D.getIsSigned() << std::endl;
+			}
+			catch (std::exception &e)
+			{
+				std::cout << "Exception: " << e.what() << std::endl;
+			}
 		}
 	}
 
-	std::cout << std::endl;
-	std::cout << "******************************************************" << std::endl;
-	std::cout << "Create a Bureaucrate with a grade of 2 and increase 2x" << std::endl;
-	std::cout << "******************************************************" << std::endl;
-	std::cout << std::endl;
-
 	{
-		try
+		std::cout << std::endl;
+		std::cout << "****************************************************" << std::endl;
+		std::cout << "Create a Bureaucrat and a Form | Henry sign the form" << std::endl;
+		std::cout << "****************************************************" << std::endl;
+		std::cout << std::endl;
+
 		{
-			Bureaucrat B("leo", 2);
-			B.IncreaseGrade();
-			std::cout << B.getName() << " = " << B.getGrade() << std::endl;
-			B.IncreaseGrade();
-			std::cout << B.getName() << " = " << B.getGrade() << std::endl;
-		}
-		catch (std::exception &e)
-		{
-			std::cout << "Exception: " << e.what() << std::endl;
+			try
+			{
+				Bureaucrat A("Henry", 5);
+				Form D("Form D", 10, 3);
+				std::cout << A.getName() << " = " << A.getGrade() << std::endl;
+				std::cout << D.getFormName() << " = " << D.getIsSigned() << std::endl;
+				A.signForm(D);
+				std::cout << "\n *** \n" << std::endl;
+
+				D.beSigned(A);
+				std::cout << D.getFormName() << " = " << D.getIsSigned() << std::endl;
+				D.beSigned(A);
+				std::cout << D.getFormName() << " = " << D.getIsSigned() << std::endl;
+				A.signForm(D);
+			}
+			catch (std::exception &e)
+			{
+				std::cout << "Exception: " << e.what() << std::endl;
+			}
 		}
 	}
-
-	std::cout << std::endl;
-	std::cout << "******************************************************" << std::endl;
-	std::cout << "Create a Bureaucrate with a grade of 149 and deccrease" << std::endl;
-	std::cout << "******************************************************" << std::endl;
-	std::cout << std::endl;
-
 	{
-		try
+		std::cout << std::endl;
+		std::cout << "**********************************************************" << std::endl;
+		std::cout << "Create a Bureaucrat and a Form | John cannot sign the form" << std::endl;
+		std::cout << "**********************************************************" << std::endl;
+		std::cout << std::endl;
+
 		{
-			Bureaucrat C("ken", 149);
-			C.DecreaseGrade();
-			std::cout << C.getName() << " = " << C.getGrade() << std::endl;
-		}
-		catch (std::exception &e)
-		{
-			std::cout << "Exception: " << e.what() << std::endl;
+			try
+			{
+				Bureaucrat B("John", 50);
+				Form E("Form E", 5, 3);
+				std::cout << B.getName() << " = " << B.getGrade() << std::endl;
+				std::cout << E.getFormName() << " = " << E.getIsSigned() << std::endl;
+				B.signForm(E);
+				std::cout << "\n *** \n" << std::endl;
+
+				E.beSigned(B);
+				std::cout << E.getFormName() << " = " << E.getIsSigned() << std::endl;
+				E.beSigned(B);
+				std::cout << E.getFormName() << " = " << E.getIsSigned() << std::endl;
+				B.signForm(E);
+			}
+			catch (std::exception &e)
+			{
+				std::cout << "Exception: " << e.what() << std::endl;
+			}
 		}
 	}
-	std::cout << std::endl;
-	std::cout << "********************************************" << std::endl;
-	std::cout << "Create a copy Bureaucrate with a grade of 33" << std::endl;
-	std::cout << "********************************************" << std::endl;
-	std::cout << std::endl;
-
 	{
-		Bureaucrat D("henry", 33);
-		Bureaucrat E;
-		std::cout << "Before copy :\n";
-		std::cout << E.getName() << " = " << E.getGrade() << std::endl;
-		E = D;
-		std::cout << "After copy :\n";
-		try
+		std::cout << std::endl;
+		std::cout << "******************************************************" << std::endl;
+		std::cout << "Create a Bureaucrat and a Form | Leo and Hugh can sign" << std::endl;
+		std::cout << "******************************************************" << std::endl;
+		std::cout << std::endl;
+
 		{
-			D.DecreaseGrade();
-			std::cout << E.getName() << " = " << E.getGrade() << std::endl;
+			try
+			{
+				Bureaucrat B("Leo", 10);
+				Bureaucrat C("Hugh", 10);
+				Form E("Form E", 11, 3);
+				std::cout << B.getName() << " = " << B.getGrade() << std::endl;
+				std::cout << C.getName() << " = " << B.getGrade() << std::endl;
+				std::cout << E.getFormName() << " = " << E.getIsSigned() << std::endl;
+				std::cout << "\n *** \n" << std::endl;
+
+				E.beSigned(B);
+				B.signForm(E);
+				E.beSigned(C);
+				C.signForm(E);
+
+				std::cout << E.getFormName() << " = " << E.getIsSigned() << std::endl;
+				B.DecreaseGrade();
+				E.beSigned(B);
+
+				std::cout << E.getFormName() << " = " << E.getIsSigned() << std::endl;
+				B.signForm(E);
+			}
+			catch (std::exception &e)
+			{
+				std::cout << "Exception: " << e.what() << std::endl;
+			}
 		}
-		catch (std::exception &e)
-		{
-			std::cout << "Exception: " << e.what() << std::endl;
-		}
+
 	}
-
-	std::cout << std::endl;
-	std::cout << "************************************************************" << std::endl;
-	std::cout << "Create a Bureaucrate via constructor copy with a grade of 10" << std::endl;
-	std::cout << "************************************************************" << std::endl;
-	std::cout << std::endl;
-
-	{
-		Bureaucrat D("henry", 10);
-		Bureaucrat E(D);
-		std::cout << E.getName() << " = " << E.getGrade() << std::endl;
-		try
-		{
-			E.DecreaseGrade();
-			std::cout << E.getName() << " = " << E.getGrade() << std::endl;
-		}
-		catch (std::exception &e)
-		{
-			std::cout << "Exception: " << e.what() << std::endl;
-		}
-	}
-
-	std::cout << std::endl;
-	std::cout << "************************************************************" << std::endl;
-	std::cout << "Create a Form" << std::endl;
-	std::cout << "************************************************************" << std::endl;
-	std::cout << std::endl;
-
-	{
-		Bureaucrat A("henry", 5);
-		Form D("form", 10, 3);
-		std::cout << D.getFormName() << " = " << D.getIsSigned() << std::endl;
-		try
-		{
-			D.beSigned(A);
-			std::cout << D.getFormName() << " = " << D.getIsSigned() << std::endl;
-		}
-		catch (std::exception &e)
-		{
-			std::cout << "Exception: " << e.what() << std::endl;
-		}
-	}
-
 
 	return (0);
 }

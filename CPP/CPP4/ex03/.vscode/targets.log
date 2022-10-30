@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Oct 24 15:16:36 2022
+# Make data base, printed on Sun Oct 30 16:51:50 2022
 
 # Variables
 
@@ -15,13 +15,17 @@ GDK_BACKEND = x11
 # environment
 LC_ALL = C
 # environment
+NO_AT_BRIDGE = 1
+# environment
 SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
-MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
+MANDATORY_PATH = /usr/share/gconf/unity.mandatory.path
 # environment
 VSCODE_CWD = /mnt/nfs/homes/ccalas/Desktop/42_cpp/CPP/CPP4/ex03
 # environment
 LIBVIRT_DEFAULT_URI = qemu:///system
+# environment
+GDM_LANG = en
 # default
 MAKE_COMMAND := make
 # environment
@@ -41,7 +45,7 @@ PWD = /mnt/nfs/homes/ccalas/Desktop/42_cpp/CPP/CPP4/ex03
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/mnt/nfs/homes/ccalas/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+XDG_DATA_DIRS = /usr/share/unity:/usr/share/gnome:/mnt/nfs/homes/ccalas/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
 OLDPWD = /mnt/nfs/homes/ccalas/Desktop/42_cpp/CPP/CPP4
 # automatic
@@ -51,7 +55,7 @@ OLDPWD = /mnt/nfs/homes/ccalas/Desktop/42_cpp/CPP/CPP4
 # environment
 VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/ccalas/.config/Code/CachedData/d045a5eda657f4d7b676dedbfa7aab8207f8a075
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session8
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # environment
 LANG = C
 # environment
@@ -61,7 +65,7 @@ XAUTHORITY = /mnt/nfs/homes/ccalas/.Xauthority
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
 # environment
-GNOME_TERMINAL_SERVICE = :1.98
+GNOME_TERMINAL_SERVICE = :1.97
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -79,11 +83,11 @@ SSH_AUTH_SOCK = /run/user/40307/keyring/ssh
 # default
 .SHELLFLAGS := -c
 # environment
-XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+XDG_CONFIG_DIRS = /etc/xdg/xdg-unity:/etc/xdg
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
-XDG_SESSION_DESKTOP = ubuntu
+XDG_SESSION_DESKTOP = unity
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
 # automatic
@@ -91,15 +95,15 @@ MAKEFILE_LIST := Makefile
 # environment
 ZSH = /mnt/nfs/homes/ccalas/.oh-my-zsh
 # environment
-VSCODE_PID = 1323910
+VSCODE_PID = 5576
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_40307_oIqzW8
+KRB5CCNAME = FILE:/tmp/krb5cc_40307_UBObxa
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/e3r3p6.clusters.42paris.fr:@/tmp/.ICE-unix/1322586,unix/e3r3p6.clusters.42paris.fr:/tmp/.ICE-unix/1322586
+SESSION_MANAGER = local/e3r4p1.clusters.42paris.fr:@/tmp/.ICE-unix/2776,unix/e3r4p1.clusters.42paris.fr:/tmp/.ICE-unix/2776
 # automatic
 *F = $(notdir $*)
 # environment
@@ -125,7 +129,7 @@ XMODIFIERS = @im=ibus
 # environment
 SHLVL = 1
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/bb4ca87e_cb51_4725_98a2_6a27e11ade64
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2e71be3f_9d72_4206_897a_9b99942c9995
 # environment
 MAKELEVEL := 0
 # default
@@ -134,6 +138,8 @@ MAKE = $(MAKE_COMMAND)
 PATH = /mnt/nfs/homes/ccalas/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # default
 MAKEFILES := 
+# environment
+LANGUAGE = en
 # automatic
 ^F = $(notdir $^)
 # makefile (from 'Makefile', line 13)
@@ -155,7 +161,7 @@ XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
 LESS = -R
 # environment
-DESKTOP_SESSION = ubuntu
+DESKTOP_SESSION = unity
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # 'override' directive
@@ -165,7 +171,7 @@ LOGNAME = ccalas
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 1322604
+SYSTEMD_EXEC_PID = 2795
 # environment
 DISPLAY = :0
 # environment
@@ -173,7 +179,7 @@ USER = ccalas
 # environment
 GTK_MODULES = gail:atk-bridge
 # environment
-DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
+DEFAULTS_PATH = /usr/share/gconf/unity.default.path
 # default
 MAKE_VERSION := 4.3
 # environment
@@ -223,9 +229,9 @@ CC = c++
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
-GDMSESSION = ubuntu
+GDMSESSION = unity
 # variable set hash-table stats:
-# Load=107/1024=10%, Rehash=0, Collisions=13/151=9%
+# Load=110/1024=11%, Rehash=0, Collisions=14/154=9%
 
 # Pattern-specific Variable Values
 
@@ -281,13 +287,13 @@ objects/MateriaSource.o:
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
+ 
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 29):
 	${RM} ${OBJS}
 
 re: fclean all
- 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -387,6 +393,6 @@ objects/main.o: main.cpp
 # strcache performance: lookups = 60 / hit rate = 35%
 # hash-table stats:
 # Load=39/8192=0%, Rehash=0, Collisions=0/60=0%
-# Finished Make data base on Mon Oct 24 15:16:36 2022
+# Finished Make data base on Sun Oct 30 16:51:50 2022
 
  
