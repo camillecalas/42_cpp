@@ -20,17 +20,7 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 {
 	if (this == &rhs)
 		return (*this);
-	_signed = rhs._signed;
-	_target = rhs._target;
-	unsigned int *ptr_gradeTosign = (unsigned int *)&this->_gradeToSign;
-	*ptr_gradeTosign = rhs._gradeToSign;
-
-	unsigned int *ptr_gradeToExecute = (unsigned int *)&this->_gradeToExecute;
-	*ptr_gradeToExecute = rhs._gradeToExecute;
-
-	std::string	*ptr_name = (std::string *)&this->_formName;
-	*ptr_name = rhs._formName;
-
+	Form::operator=(rhs);
 	return (*this);
 }
 
