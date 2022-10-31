@@ -90,6 +90,20 @@ void	Bureaucrat::signForm(Form &A)
 		}
 }
 
+void	Bureaucrat::executeForm(Form const & form)
+{
+	std::cout << "ici\n";
+	// std::cout << "Bureaucrat grade = " << Bureaucrat::getGrade() << " Form grade = " << form.getFormGradeToExecute() << " Form is signed = " << form.getIsSigned() << std::endl;
+	// if (Bureaucrat::getGrade() < form.getFormGradeToExecute() && form::getIsSigned() == true)
+	if (Bureaucrat::getGrade() < form.getFormGradeToExecute())
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getFormName() << std::endl;
+	}
+	else
+		std::cout << "Error\n";
+}
+
 
 /************************ GRADES ************************/
 const char *Bureaucrat::GradeTooLow::what() const throw()

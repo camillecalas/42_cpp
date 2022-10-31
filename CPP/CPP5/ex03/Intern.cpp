@@ -43,11 +43,12 @@ Form	*Intern::makeForm(std::string formName, std::string target)
 {
 	Form * form;
 	Form * (Intern::*ptr_form[3])(std::string) = {&Intern::makeShrubbery, &Intern::makeRobotomy, &Intern::makePresidential};
-	std::string	names[3] = {"Shruberry", "Robotomy", "Presidential"};
+	std::string	names[3] = {"shruberry form", "robotomy request", "presidential pardon"};
 
-	for (int i = 0; i < 1; i++)
+	for (int i = 0; i < 3; i++)
 	{
-		if (formName.compare(names[i]) == 0)
+		// if (formName == names[i])
+		if (!formName.compare(names[i]))
 		{
 			std::cout << "Intern creates " << formName << std::endl;
 			form = (this->*ptr_form[i])(target);
