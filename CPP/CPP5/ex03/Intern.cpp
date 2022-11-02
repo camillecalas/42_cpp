@@ -45,9 +45,10 @@ Form	*Intern::makeForm(std::string formName, std::string target)
 	Form * (Intern::*ptr_form[3])(std::string) = {&Intern::makeShrubbery, &Intern::makeRobotomy, &Intern::makePresidential};
 	std::string	names[3] = {"shruberry form", "robotomy request", "presidential pardon"};
 
+	if (target.empty())
+		throw Intern::FormNotFound();
 	for (int i = 0; i < 3; i++)
 	{
-		// if (formName == names[i])
 		if (!formName.compare(names[i]))
 		{
 			std::cout << "Intern creates " << formName << std::endl;
@@ -55,7 +56,6 @@ Form	*Intern::makeForm(std::string formName, std::string target)
 			return (form);
 		}
 	}
-
 	throw Intern::FormNotFound();
 	return (form);
 }
@@ -63,5 +63,5 @@ Form	*Intern::makeForm(std::string formName, std::string target)
 
 const char *Intern::FormNotFound::what() const throw()
 {
-	return ("Intern::FormDoNotHaveAName\n");
+	return ("Intern::FormNotFound\n");
 }

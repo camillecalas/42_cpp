@@ -1,5 +1,7 @@
 #include "RobotomyRequestForm.hpp"
 
+int	RobotomyRequestForm::_i = 1;
+
 /*************** CONSTRUCTOR | DESTRUCTOR ***************/
 RobotomyRequestForm::RobotomyRequestForm() : Form("Robotomy_Form", 72, 45), _target("Unkown")
 {}
@@ -30,6 +32,7 @@ std::string	RobotomyRequestForm::getTarget() const
 {
 	return (_target);
 }
+
 void	RobotomyRequestForm::execute(Bureaucrat const & A) const
 {
 	if (this->getIsSigned() == false)

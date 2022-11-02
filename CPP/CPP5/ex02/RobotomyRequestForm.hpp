@@ -22,6 +22,4 @@ class RobotomyRequestForm : public Form
 			static int		_i;
 };
 
-int	RobotomyRequestForm::_i = 1;
-
 #endif

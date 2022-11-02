@@ -24,13 +24,12 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 	return (*this);
 }
 
-
-
 /************************ METHODES ************************/
 std::string	ShrubberyCreationForm::getTarget() const
 {
 	return (_target);
 }
+
 void	ShrubberyCreationForm::execute(Bureaucrat const & A) const
 {
 	if (this->getIsSigned() == false)

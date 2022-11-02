@@ -24,8 +24,6 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonFor
 	return (*this);
 }
 
-
-
 /************************ METHODES ************************/
 std::string	PresidentialPardonForm::getTarget() const
 {

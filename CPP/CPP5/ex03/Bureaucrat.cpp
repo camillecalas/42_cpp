@@ -36,7 +36,6 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const &rhs)
 	
 }
 
-
 std::ostream & operator<<(std::ostream & os, Bureaucrat & obj)
 {
 	os << obj.getName();
@@ -45,7 +44,6 @@ std::ostream & operator<<(std::ostream & os, Bureaucrat & obj)
 	std::cout << "." << std::endl;
 	return (os);
 }
-
 
 /************************ METHODES ************************/
 //Assesseurs :
@@ -59,7 +57,6 @@ unsigned int	Bureaucrat::getGrade() const
 	return (_grade);
 }
 
-
 // Degremente car 1 est l'echelon le plus haut
 void	Bureaucrat::IncreaseGrade()
 {
@@ -68,6 +65,7 @@ void	Bureaucrat::IncreaseGrade()
 	else
 		throw Bureaucrat::GradeTooHigh();
 }
+
 // Increment car 150 est l'echelon le plus bas
 void	Bureaucrat::DecreaseGrade()
 {
@@ -92,13 +90,13 @@ void	Bureaucrat::signForm(Form &A)
 
 void	Bureaucrat::executeForm(Form const & form)
 {
-	if (Bureaucrat::getGrade() < form.getFormGradeToExecute() && form.getIsSigned())
+	if (Bureaucrat::getGrade() < form.getFormGradeToExecute() && form.getIsSigned() == true)
 	{
 		form.execute(*this);
 		std::cout << this->getName() << " executed " << form.getFormName() << std::endl;
 	}
 	else
-		std::cout << "Error\n";
+		std::cout << "The form couldn't been executed\n";
 }
 
 
