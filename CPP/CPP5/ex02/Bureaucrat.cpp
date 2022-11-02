@@ -92,10 +92,9 @@ void	Bureaucrat::signForm(Form &A)
 
 void	Bureaucrat::executeForm(Form const & form)
 {
-	std::cout << "ici\n";
-	// std::cout << "Bureaucrat grade = " << Bureaucrat::getGrade() << " Form grade = " << form.getFormGradeToExecute() << " Form is signed = " << form.getIsSigned() << std::endl;
-	// if (Bureaucrat::getGrade() < form.getFormGradeToExecute() && form::getIsSigned() == true)
-	if (Bureaucrat::getGrade() < form.getFormGradeToExecute())
+	// if (Bureaucrat::getGrade() < form.getFormGradeToExecute())
+	std::cout << "Bureaucrat grade = " << Bureaucrat::getGrade() << " Form grade = " << form.getFormGradeToExecute() << " Form is signed = " << form.getIsSigned() << std::endl;
+	if (Bureaucrat::getGrade() < form.getFormGradeToExecute() && form.getIsSigned() == true)
 	{
 		form.execute(*this);
 		std::cout << this->getName() << " executed " << form.getFormName() << std::endl;

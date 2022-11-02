@@ -1,0 +1,19 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/camille/Desktop/42_cpp/CPP/CPP5/ex03'
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c main.cpp -o objects/main.o 
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c Bureaucrat.cpp -o objects/Bureaucrat.o 
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c Form.cpp -o objects/Form.o 
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c ShrubberyCreationForm.cpp -o objects/ShrubberyCreationForm.o 
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c RobotomyRequestForm.cpp -o objects/RobotomyRequestForm.o 
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c PresidentialPardonForm.cpp -o objects/PresidentialPardonForm.o 
+mkdir -p objects/
+c++ -Wall -Werror -Wextra -std=c++98 -c Intern.cpp -o objects/Intern.o 
+c++ -Wall -Werror -Wextra -std=c++98 objects/main.o objects/Bureaucrat.o objects/Form.o objects/ShrubberyCreationForm.o objects/RobotomyRequestForm.o objects/PresidentialPardonForm.o objects/Intern.o -o Bureaucrat
+make: Leaving directory `/Users/camille/Desktop/42_cpp/CPP/CPP5/ex03'
+ 
