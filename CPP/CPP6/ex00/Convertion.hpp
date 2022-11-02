@@ -5,6 +5,7 @@
 # include <iostream>
 # include <string>
 # include <limits>
+# include <climits>
 # include <cmath>
 // =============================================================================
 
@@ -15,7 +16,7 @@
 // CLASS DEFINITIONS ===========================================================
 class Convertion
 {
-	Public:
+	public:
 		// Coplien
 		Convertion();
 		Convertion(Convertion const &);
@@ -24,9 +25,22 @@ class Convertion
 
 		// Getter - Setter
 
-        // Additionnal
+        // Methodes
+		void	checker(std::string &);
+		void	convert_char(std::string &);
 
 		// Exceptions
+	private:
+	char	_char;
+	int		_int;
+	double	_double;
+	float	_float;
+
+
+	bool	_char_overflow;
+	bool	_int_overflow;
+	double	_double_overflow;
+	float	_float_overflow;
 
 };
 // =============================================================================
