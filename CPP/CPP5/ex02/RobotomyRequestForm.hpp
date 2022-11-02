@@ -3,7 +3,6 @@
 
 #include "Form.hpp"
 
-static int		_i = 1;
 class RobotomyRequestForm : public Form
 {
 		public:
@@ -20,6 +19,9 @@ class RobotomyRequestForm : public Form
 		
 		private:
 			std::string		_target;
+			static int		_i;
 };
+
+int	RobotomyRequestForm::_i = 1;
 
 #endif

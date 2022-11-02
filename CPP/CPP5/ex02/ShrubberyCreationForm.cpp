@@ -24,8 +24,6 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 	return (*this);
 }
 
-
-
 /************************ METHODES ************************/
 std::string	ShrubberyCreationForm::getTarget() const
 {

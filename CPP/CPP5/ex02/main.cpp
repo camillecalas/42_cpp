@@ -7,34 +7,34 @@
 int	main()
 {
 
-	{
-		Form			*form = NULL;
-		Bureaucrat		bob("bob", 1);
-		Bureaucrat		phil("phil", 40);
-		Bureaucrat		luc("luc", 18);
+	// {
+	// 	Form			*form = NULL;
+	// 	Bureaucrat		bob("bob", 1);
+	// 	Bureaucrat		phil("phil", 40);
+	// 	Bureaucrat		luc("luc", 18);
 
-	try
-	{
-		form = new PresidentialPardonForm("28A");
-		std::cout << "Form = " << form->getIsSigned() << std::endl;
-		form->beSigned(bob);
-		// bob.signForm(*form);
-		std::cout << "Form = " << form->getIsSigned() << std::endl;
-		form->execute(bob);
-		std::cout << "Form = " << form->getIsSigned() << std::endl;
-		bob.executeForm(PresidentialPardonForm("45GCD"));
-		delete form;
-		form = NULL;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	// try
+	// {
+	// 	form = new PresidentialPardonForm("28A");
+	// 	std::cout << "Form = " << form->getIsSigned() << std::endl;
+	// 	form->beSigned(bob);
+	// 	// bob.signForm(*form);
+	// 	std::cout << "Form = " << form->getIsSigned() << std::endl;
+	// 	form->execute(bob);
+	// 	std::cout << "Form = " << form->getIsSigned() << std::endl;
+	// 	bob.executeForm(PresidentialPardonForm("45GCD"));
+	// 	delete form;
+	// 	form = NULL;
+	// }
+	// catch (std::exception &e)
+	// {
+	// 	std::cout << e.what() << std::endl;
+	// }
 
-	std::cout << std::endl;
-	std::cout << "****\n";
-	std::cout << std::endl;
-	}
+	// std::cout << std::endl;
+	// std::cout << "****\n";
+	// std::cout << std::endl;
+	// }
 	// try
 	// {
 		
@@ -74,30 +74,31 @@ int	main()
 
 	// delete form;
 	// }
-	// {
-	// 	std::cout << std::endl;
-	// 	std::cout << "************************" << std::endl;
-	// 	std::cout << "Create a Shruberry Forms" << std::endl;
-	// 	std::cout << "************************" << std::endl;
-	// 	std::cout << std::endl;
 
-	// 	{
-	// 		try
-	// 		{
-	// 			Bureaucrat A("Henry", 5);
-	// 			ShrubberyCreationForm D;
-	// 			std::cout << A.getName() << " = " << A.getGrade() << std::endl;
-	// 			std::cout << D.getFormName() << " = " << D.getIsSigned() << std::endl;
-	// 			D.beSigned(A);
-	// 			std::cout << D.getFormName() << " = " << D.getIsSigned() << std::endl;
-	// 			D.execute(A);
-	// 		}
-	// 		catch (std::exception &e)
-	// 		{
-	// 			std::cout << "Exception: " << e.what() << std::endl;
-	// 		}
-	// 	}
-	// }
+	{
+		std::cout << std::endl;
+		std::cout << "************************" << std::endl;
+		std::cout << "Create a Shruberry Forms" << std::endl;
+		std::cout << "************************" << std::endl;
+		std::cout << std::endl;
+
+		{
+			try
+			{
+				Bureaucrat A("Henry", 5);
+				ShrubberyCreationForm D;
+				std::cout << A.getName() << " = " << A.getGrade() << std::endl;
+				std::cout << D.getFormName() << " = " << D.getIsSigned() << std::endl;
+				D.beSigned(A);
+				std::cout << D.getFormName() << " = " << D.getIsSigned() << std::endl;
+				D.execute(A);
+			}
+			catch (std::exception &e)
+			{
+				std::cout << "Exception: " << e.what() << std::endl;
+			}
+		}
+	}
 	// {
 	// 	std::cout << std::endl;
 	// 	std::cout << "***********************" << std::endl;

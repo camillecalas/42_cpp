@@ -25,7 +25,6 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const &
 }
 
 
-
 /************************ METHODES ************************/
 std::string	RobotomyRequestForm::getTarget() const
 {
