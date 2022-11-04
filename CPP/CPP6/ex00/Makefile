@@ -8,7 +8,7 @@ CC = c++
 OBJS_PATH = objects/
 OBJS = ${addprefix ${OBJS_PATH}, ${SRCS:.cpp=.o}}
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 
 ${OBJS_PATH}%.o: ${SRCS_PATH}%.cpp
 	@mkdir -p $(dir $@)

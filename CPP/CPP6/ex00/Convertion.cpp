@@ -91,25 +91,13 @@ Convertion::Convertion(std::string & str) : _inff(false), _plus_inff(false), _mi
 	if (pseudo_litteral(str) == true)
 		return ;
 	else if (isInteger(str))
-	{
-		std::cout << "isInt\n";
 		convert_int(str);
-	}
 	else if (isChar(str))
-	{
-		std::cout << "isChar\n";
 		convert_char(str);
-	}
 	else if (isDouble(str))
-	{
-		std::cout << "isDouble\n";
 		convert_double(str);
-	}
 	else if (isFloat(str))
-	{
-		std::cout << "isFloat\n";
 		convert_float(str);
-	}
 	else	
 		_error = true;
 }
@@ -224,7 +212,8 @@ void	Convertion::print_float() const
 	else if(_nanf)
 		std::cout << "nanf\n"; 
 	else
-		std::cout << _float << "f" << std::endl;
+		std::cout << std::setiosflags(std::ios::fixed) << _float << "f" << std::endl;
+	
 }
 
 void	Convertion::print_double() const
@@ -240,7 +229,7 @@ void	Convertion::print_double() const
 	else if(_nanf)
 		std::cout << "nan\n"; 
 	else
-		std::cout << std::setiosflags(std::ios_base::dec) << _double << std::endl;
+		std::cout << std::setiosflags(std::ios::fixed) << _double << std::endl;
 }
 
 void	Convertion::print_int() const

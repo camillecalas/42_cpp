@@ -2,20 +2,16 @@
 # define CONVERTION_HPP
 
 // LIBS ========================================================================
+#include <iomanip>
 # include <iostream>
+#include <sstream>
 # include <string>
 # include <limits>
 # include <climits>
-# include <cmath>
 # include <cerrno>
-# include <iostream>
-# include <iomanip>
-# include <stdlib.h>
-# include <limits.h>
-# include <limits>
 # include <float.h>
 # include <errno.h>
-# include <sstream>
+#include <cmath>
 
 // =============================================================================
 
