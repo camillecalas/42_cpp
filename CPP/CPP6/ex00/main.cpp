@@ -4,13 +4,12 @@
 int	main(int ac, char **av)
 {
 
-	int i = 0;
 	if (ac != 2)
 	{
 		std::cout << "This program takes 1 arguments\n";
 		return (1);
 	}
-
+ 
 	std::string	str = av[1];
 	if (str.empty())
 	{
