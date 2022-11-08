@@ -4,7 +4,7 @@
 // CONSTRUCTORS ===============================================
 
 template <typename T>
-Array<T>::Array() : _rawArray(NULL), _size(0) 
+Array<T>::Array() : _rawArray(NULL), _size(0)
 {
 	_rawArray = new T[0];
 }
@@ -21,7 +21,12 @@ Array<T>::Array(unsigned int size) : _rawArray(0), _size(size)
 template <typename T>
 Array<T>::Array(Array const &copy)
 {
-	*this = copy;
+	_size = copy._size;
+	_rawArray = new T[_size];
+	for (unsigned int i = 0; i < _size; i++)
+	{
+		_rawArray[i] = copy._rawArray[i];
+	}
 }
 
 
@@ -38,16 +43,14 @@ Array<T>::~Array()
 template <typename T>
 Array<T> & Array<T>::operator=(Array const &rhs)
 {
-	if (_rawArray != NULL)
-		delete[]_rawArray;
-	if (rhs.size() != 0)
+	if (this == &rhs)
+		return (*this);
+	delete[]_rawArray;
+	_size = rhs._size;
+	_rawArray = new T[_size];
+	for (unsigned int i = 0; i < _size; i++)
 	{
-		_size = rhs._size;
-		_rawArray = new T[_size];
-		for (unsigned int i = 0; i < _size; i++)
-		{
-			_rawArray[i] = rhs._rawArray[i];
-		}
+		_rawArray[i] = rhs._rawArray[i];
 	}
 	return (*this);
 }

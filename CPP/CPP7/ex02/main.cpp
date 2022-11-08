@@ -23,14 +23,37 @@ int main()
 		{
 			std::cout << b[i] << std::endl;
 		}
-		std::cout << "*********\n";
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
 
+	std::cout << "************************************\n";
+	try
+	{
+		Array<int> a(4);
 
+		std::cout << "Size of A = " << a.size() << std::endl;
+		for (int i = 0; i < 4; i++)
+		{
+			a[i] = 2;
+			std::cout << a[i] << std::endl;
+		}
+		std::cout << "*********\n";
+		Array<int> b(a);
+		std::cout << "Size of B = " << b.size() << std::endl;
+		for (int i = 0; i < 4; i++)
+		{
+			std::cout << b[i] << std::endl;
+		}
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	std::cout << "************************************\n";
 	{
 		// srand(time(NULL));
 		// makes use of the computer's internal clock to control the choice of the seed.  Since time is continually changing, the seed is forever changing.  Remember, if the seed number remains the same, the sequence of numbers will be repeated for each run of the program.
