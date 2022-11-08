@@ -1,10 +1,10 @@
 {
 	"files.associations": {
-		"ostream": "cpp",
-		"limits": "cpp",
+		"*.tpp": "cpp",
 		"*.tcc": "cpp",
 		"cctype": "cpp",
 		"clocale": "cpp",
+		"cmath": "cpp",
 		"compare": "cpp",
 		"concepts": "cpp",
 		"cstdint": "cpp",
@@ -17,15 +17,17 @@
 		"iosfwd": "cpp",
 		"iostream": "cpp",
 		"istream": "cpp",
+		"limits": "cpp",
 		"new": "cpp",
+		"numbers": "cpp",
+		"ostream": "cpp",
 		"stdexcept": "cpp",
 		"streambuf": "cpp",
 		"string": "cpp",
 		"string_view": "cpp",
 		"system_error": "cpp",
 		"type_traits": "cpp",
-		"typeinfo": "cpp",
-		"cmath": "cpp",
-		"numbers": "cpp"
-	}
+		"typeinfo": "cpp"
+	},
+	"C_Cpp.errorSquiggles": "Disabled"
 }

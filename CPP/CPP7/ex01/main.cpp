@@ -9,8 +9,13 @@ int main( void ) {
 	for (int i = 0; i < 5; i++)
 	{
 		std::cout << "a[i] = " << a[i] << std::endl;
+	}
+	for (int i = 0; i < 5; i++)
+	{
 		std::cout << "b[i] = " << b[i] << std::endl;
 	}
-	::iter(a, 5, &toupper);
+	::iter(a, 5, &ft_print_a);
+	std::cout <<"**\n";
+	::iter(b, 5, &ft_print_a);
 	return 0;
 }

@@ -10,3 +10,10 @@ iter(T *a, int size, void (*f)(T const &))
 		f(a[i]);
 	}
 }
+
+template <typename T>
+void 
+ft_print_a(T a)
+{
+	std::cout << a << std::endl;
+}
