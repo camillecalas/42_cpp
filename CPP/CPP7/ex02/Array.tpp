@@ -4,7 +4,7 @@
 // CONSTRUCTORS ===============================================
 
 template <typename T>
-Array<T>::Array() : _rawArray(NULL), _size(0)
+Array<T>::Array() : _rawArray(0), _size(0)
 {
 	_rawArray = new T[0];
 }
@@ -28,7 +28,6 @@ Array<T>::Array(Array const &copy)
 		_rawArray[i] = copy._rawArray[i];
 	}
 }
-
 
 template <typename T>
 Array<T>::~Array()
@@ -65,7 +64,6 @@ T & Array<T>::operator[](unsigned int pos) const
 
 // ============================================================
 // METHODES ===================================================
-
 template <typename T>
 unsigned int Array<T>::size() const
 {
@@ -73,7 +71,7 @@ unsigned int Array<T>::size() const
 }
 
 // ============================================================
-// METHODES ===================================================
+// EXCEPTIONS =================================================
 template <typename T>
 const char *Array<T>::OutofRange::what() const throw()
 {

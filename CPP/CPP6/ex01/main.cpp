@@ -13,11 +13,12 @@ struct Data
 	std::string	s;
 };
 
+//Elle prend un pointeur et convertit celui-ci vers le type d’entier non-signé uintptr_t
 uintptr_t serialize(Data* ptr)
 {
 	return (reinterpret_cast<uintptr_t>(ptr));
 }
-
+// Elle prend un entier non-signé en paramètre et le convertit en pointeur sur Data.
 Data* deserialize(uintptr_t raw)
 {
 	return (reinterpret_cast<Data *>(raw));
@@ -30,13 +31,11 @@ int main()
 	Data		*ptr;
 	uintptr_t	raw;
 
-	data.k = 4.4;
 	data.i = 50;
 	data.j = 2;
 	data.c = 'c';
 	data.x = true;
 
-	std::cout << "Data address = " << &data << " | Double data.k = " << data.k << std::endl;
 	std::cout << "Data address = " << &data << " | Int  data.i = " << data.i << std::endl;
 	std::cout << "Data address = " << &data << " | Int  data.j = " << data.j << std::endl;
 	std::cout << "Data address = " << &data << " | Char data.c = " << data.c << std::endl;
@@ -46,7 +45,6 @@ int main()
 	raw = serialize(&data);
 	ptr = deserialize(raw);
 
-	std::cout << "Data address = " << &data << " | Double data.k = " << ptr->k << std::endl;
 	std::cout << "Data address = " << &data << " | Int  data.i = " << ptr->i << std::endl;
 	std::cout << "Data address = " << &data << " | Int  data.j = " << ptr->j << std::endl;
 	std::cout << "Data address = " << &data << " | Char data.c = " << ptr->c << std::endl;

@@ -70,11 +70,11 @@ Convertion::Convertion() :	_char('0'), _int(0), _double(0.0), _float(0.0f),
 bool	Convertion::pseudo_litteral(std::string & str)
 {
 	if (str.compare("inff") == 0 || str.compare("inf") == 0)
-		return (true);
+		_inff = (true);
 	else if (str.compare("-inff") == 0 || str.compare("-inf") == 0)
-		return (true);
+		_minus_inff = (true);
 	else if (str.compare("+inff") == 0 || str.compare("+inf") == 0)
-		return (true);
+		_plus_inff = (true);
 	else if (str.compare("nan") == 0 || str.compare("nanf") == 0)
 		_nanf = true;
 	if (_inff == true || _minus_inff == true || _plus_inff == true || _nanf == true)
@@ -86,8 +86,6 @@ Convertion::Convertion(std::string & str) : _inff(false), _plus_inff(false), _mi
 											_char_overflow(false), _int_overflow(false), _double_overflow(false), _float_overflow(false), _error(false)
 											
 {
-	std::cout << "Surcharged Constructor\n";
-
 	if (pseudo_litteral(str) == true)
 		return ;
 	else if (isInteger(str))
@@ -118,6 +116,11 @@ Convertion	Convertion::operator=(Convertion const & rhs)
 	_int = rhs._int;
 	_double = rhs._double;
 	_float = rhs._float;
+	_inff = rhs._inff;
+	_plus_inff = rhs._plus_inff;
+	_minus_inff = rhs._minus_inff;
+	_nanf = rhs._nanf;
+
 	return (*this);
 }
 
