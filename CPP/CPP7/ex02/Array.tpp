@@ -10,10 +10,10 @@ Array<T>::Array() : _rawArray(0), _size(0)
 }
 
 template <typename T>
-Array<T>::Array(unsigned int size) : _rawArray(0), _size(size)
+Array<T>::Array(size_t size) : _rawArray(0), _size(size)
 {
 	_rawArray = new T[_size];
-	for (unsigned int i = 0; i < _size; i++) {
+	for (size_t i = 0; i < _size; i++) {
 		_rawArray[i] = 0;
 	}
 }
@@ -23,7 +23,7 @@ Array<T>::Array(Array const &copy)
 {
 	_size = copy._size;
 	_rawArray = new T[_size];
-	for (unsigned int i = 0; i < _size; i++)
+	for (size_t i = 0; i < _size; i++)
 	{
 		_rawArray[i] = copy._rawArray[i];
 	}
@@ -47,7 +47,7 @@ Array<T> & Array<T>::operator=(Array const &rhs)
 	delete[]_rawArray;
 	_size = rhs._size;
 	_rawArray = new T[_size];
-	for (unsigned int i = 0; i < _size; i++)
+	for (size_t i = 0; i < _size; i++)
 	{
 		_rawArray[i] = rhs._rawArray[i];
 	}
@@ -55,7 +55,15 @@ Array<T> & Array<T>::operator=(Array const &rhs)
 }
 
 template <typename T>
-T & Array<T>::operator[](unsigned int pos) const
+T & Array<T>::operator[](size_t pos)
+{
+	if (pos >= _size)
+		throw Array<T>::OutofRange();
+	return (_rawArray[pos]);
+}
+
+template <typename T>
+const T & Array<T>::operator[](size_t pos) const
 {
 	if (pos >= _size)
 		throw Array<T>::OutofRange();
@@ -65,7 +73,7 @@ T & Array<T>::operator[](unsigned int pos) const
 // ============================================================
 // METHODES ===================================================
 template <typename T>
-unsigned int Array<T>::size() const
+size_t Array<T>::size() const
 {
 	return (_size);
 }

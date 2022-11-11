@@ -72,7 +72,7 @@ int main()
 			for (int i = 0; i < 3; i++)
 			{
 				std::cout << "numbers[" << i << "] = " << numbers[i] << std::endl;
-				std::cout << "mirror[" << i << "] = " << numbers[i] << std::endl;
+				std::cout << "mirror [" << i << "] = " << numbers[i] << std::endl;
 			}
 		}
 		catch(const std::exception& e)
