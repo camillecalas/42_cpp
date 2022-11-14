@@ -48,7 +48,6 @@ int main()
 			}
 			std::cout << A.shortestSpan() << std::endl;
 			std::cout << A.longestSpan() << std::endl;
-			// A.addNumber(5);
 		}
 		catch(const std::exception& e)
 		{
@@ -73,7 +72,7 @@ int main()
 			std::cerr << e.what() << '\n';
 		}
 	}
-		std::cout << "***************************\n";
+	std::cout << "***************************\n";
 	{
 		try
 		{
@@ -87,7 +86,24 @@ int main()
 			std::cerr << e.what() << '\n';
 		}
 	}
-
+	std::cout << "***************************\n";
+	{
+		try
+		{ 	
+			Span sp = Span(3);
+			std::vector <int> vect;
+			vect.push_back(1);
+			vect.push_back(2);
+			vect.push_back(3);
+			sp.addRange(vect.begin(), vect.end());
+			std::cout << sp.shortestSpan() << std::endl;
+			std::cout << sp.longestSpan() << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
 	
 	
 	return (0);

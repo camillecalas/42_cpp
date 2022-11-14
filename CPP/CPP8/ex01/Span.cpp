@@ -10,14 +10,11 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Span::Span()
-{
-}
+Span::Span() : _N(0), _tab()
+{}
 
-Span::Span(unsigned int N) : _N(N), _counter(0)
-{
-
-}
+Span::Span(unsigned int N) : _N(N), _tab()
+{}
 
 Span::Span( const Span & src )
 {
@@ -28,15 +25,12 @@ Span::Span( const Span & src )
 	}
 }
 
-
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
 Span::~Span()
-{
-}
-
+{}
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -55,25 +49,22 @@ Span &	Span::operator=( Span const & rhs )
 	return *this;
 }
 
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
 void	Span::addNumber(int number)
 {
-	if (_counter < _N)
-	{
-		_tab.push_back(number);
-		_counter++;
-	}
-	else
+	if (_tab.size() >= _N)
 		throw Span::TooManyNumber();
+	_tab.push_back(number);
 }
+
 
 void	Span::addRange(std::vector<int>::iterator start, std::vector<int>::iterator end)
 {
-	if ()
+	if (std::distance(start, end) > _N)
+		throw Span::TooManyNumber();
 	_tab.insert(_tab.end(), start, end);
 }
 
