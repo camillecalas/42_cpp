@@ -1,7 +1,6 @@
 NAME =	Mutant
 
 SRCS =	main.cpp\
-		Span.cpp\
 
 CC = c++
 

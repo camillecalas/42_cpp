@@ -61,7 +61,10 @@
         "locale": "cpp",
         "memory": "cpp",
         "mutex": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "*.tpp": "cpp",
+        "stack": "cpp",
+        "list": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
