@@ -39,7 +39,6 @@ class Span
 		unsigned int				_N;
 		std::vector <unsigned int>	_tab;
 		std::vector <unsigned int>	_it;
-		// unsigned int				_counter;
 };
 
 

@@ -18,14 +18,15 @@ class MutantStack : public std::stack<T>
 
 		MutantStack &		operator=( MutantStack const & rhs );
 
-		iterator begin();
-		// {
-		// 	return (this->c.begin());
-		// }
-		iterator end();
-		// {
-		// 	return (this->c.end());
-		// }
+		iterator begin()
+		{
+			return (this->c.begin());
+		}
+		iterator end()
+		{
+			return (this->c.end());
+		}
+	
 
 };
 

@@ -42,17 +42,17 @@ MutantStack<T> & MutantStack<T>::operator=( MutantStack const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-template <typename T>
-iterator MutantStack<T>::begin()
-{
-	return (this->c.begin());
-}
+// template <typename T>
+// iterator MutantStack<T>::begin()
+// {
+// 	return (this->c.begin());
+// }
 
-template <typename T>
-iterator MutantStack<T>::end()
-{
-	return (this->c.end());
-}
+// template <typename T>
+// iterator MutantStack<T>::end()
+// {
+// 	return (this->c.end());
+// }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
