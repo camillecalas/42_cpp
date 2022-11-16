@@ -46,7 +46,7 @@ int main()
 	{
 		try
 		{
-			std::cout << "********** COPY = ***********\n";
+			std::cout << "********** COPY = *********\n";
 			Span sp = Span(5);
 			sp.addNumber(6);
 			sp.addNumber(3);
@@ -66,10 +66,11 @@ int main()
 			std::cerr << e.what() << '\n';
 		}
 	}
-	std::cout << "***************************\n";
+	std::cout << "****************************\n";
 	{
 		try
 		{
+			std::cout << "**** ADD 1 - 2 - 3 - 10 ****\n";
 			Span A(4);
 			A.addNumber(1);
 			A.addNumber(2);
@@ -77,7 +78,6 @@ int main()
 			A.addNumber(10);
 			std::cout << A.shortestSpan() << std::endl;
 			std::cout << A.longestSpan() << std::endl;
-			// A.addNumber(5);
 		}
 		catch(const std::exception& e)
 		{
@@ -88,11 +88,11 @@ int main()
 	{
 		try
 		{
+			std::cout << "***** ADD 0 to  9999 *****\n";
 			Span A(10000);
 			for (int i = 0; i < 10000; i++)
-			{
 				A.addNumber(i);
-			}
+
 			std::cout << A.shortestSpan() << std::endl;
 			std::cout << A.longestSpan() << std::endl;
 		}
@@ -101,15 +101,15 @@ int main()
 			std::cerr << e.what() << '\n';
 		}
 	}
-	std::cout << "***************************\n";
+	std::cout << "*********************************\n";
 	{
 		try
 		{
+			std::cout << "* ADD 0 to  9999 and ADD 1 more *\n";
 			Span A(10000);
 			for (int i = 0; i < 10000; i++)
-			{
 				A.addNumber(i);
-			}
+
 			std::cout << A.shortestSpan() << std::endl;
 			std::cout << A.longestSpan() << std::endl;
 			A.addNumber(5);
@@ -123,6 +123,7 @@ int main()
 	{
 		try
 		{
+			std::cout << "***** No Number added *****\n";
 			Span A(10000);
 			std::cout << A.shortestSpan() << std::endl;
 			std::cout << A.longestSpan() << std::endl;
@@ -133,25 +134,6 @@ int main()
 			std::cerr << e.what() << '\n';
 		}
 	}
-	std::cout << "***************************\n";
-	{
-		try
-		{ 	
-			Span sp = Span(3);
-			std::vector <int> vect;
-			vect.push_back(1);
-			vect.push_back(2);
-			vect.push_back(3);
-			sp.addRange(vect.begin(), vect.end());
-			std::cout << sp.shortestSpan() << std::endl;
-			std::cout << sp.longestSpan() << std::endl;
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-	}
-	
 	
 	return (0);
 }

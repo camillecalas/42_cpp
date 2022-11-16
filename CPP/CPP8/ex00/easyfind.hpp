@@ -6,9 +6,9 @@
 # include <vector>
 
 template <typename T>
-bool	easyfind(T a, int b)
+bool	easyfind(T a, int Tofind)
 {
-	if (std::find(a.begin(), a.end(), b) != a.end())
+	if (std::find(a.begin(), a.end(), Tofind) != a.end())
 	{
 		std::cout << "FOUND\n";
 		return (true);

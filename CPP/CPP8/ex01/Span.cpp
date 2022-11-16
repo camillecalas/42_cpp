@@ -18,10 +18,6 @@ Span::Span(unsigned int N) : _N(N), _tab()
 
 Span::Span( const Span & src )
 {
-	_N = src._N;
-	_tab.resize(_N, 0);
-	for (size_t i = 0; i < _N; i++)
-		_tab[i] = src._tab[i];
 	*this = src;
 }
 
@@ -41,9 +37,8 @@ Span &	Span::operator=( Span const & rhs )
 	if ( this != &rhs )
 	{
 		this->_N = rhs.getN();
-		_tab.resize(_N, 0);
-		for (size_t i = 0; i < _N; i++)
-			_tab[i] = rhs._tab[i];
+		_tab = rhs._tab;
+		// this->_tab = std::vector<unsigned int>(rhs._tab);
 	}
 	return *this;
 }
